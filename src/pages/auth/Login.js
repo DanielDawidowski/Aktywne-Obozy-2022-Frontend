@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { auth, googleAuthProvider } from "../../firebase";
-import { Button } from "antd";
-import { MailOutlined, GoogleOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { createOrUpdateUser } from "../../functions/auth";
 
 const Login = ({ history }) => {
-const [email, setEmail] = useState("dvds1987@gmail.com");
+  const [email, setEmail] = useState("dvds1987@gmail.com");
   const [password, setPassword] = useState("123456");
   const [loading, setLoading] = useState(false);
 
@@ -111,18 +109,9 @@ const [email, setEmail] = useState("dvds1987@gmail.com");
       </div>
 
       <br />
-      <Button
-        onClick={handleSubmit}
-        type="primary"
-        className="mb-3"
-        block
-        shape="round"
-        icon={<MailOutlined />}
-        size="large"
-        disabled={!email || password.length < 6}
-      >
+      <button onClick={handleSubmit} className="mb-3">
         Login with Email/Password
-      </Button>
+      </button>
     </form>
   );
 
@@ -137,17 +126,9 @@ const [email, setEmail] = useState("dvds1987@gmail.com");
           )}
           {loginForm()}
 
-          <Button
-            onClick={googleLogin}
-            type="danger"
-            className="mb-3"
-            block
-            shape="round"
-            icon={<GoogleOutlined />}
-            size="large"
-          >
+          <button onClick={googleLogin} className="mb-3">
             Login with Google
-          </Button>
+          </button>
 
           <Link to="/forgot/password" className="float-right text-danger">
             Forgot Password
@@ -159,8 +140,6 @@ const [email, setEmail] = useState("dvds1987@gmail.com");
 };
 
 export default Login;
-
-
 
 // const [email, setEmail] = useState("dvds1987@gmail.com");
 //   const [password, setPassword] = useState("123456");

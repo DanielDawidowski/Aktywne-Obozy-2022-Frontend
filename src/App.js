@@ -13,13 +13,13 @@ import AdminRoute from "./components/routes/AdminRoute";
 import Password from "./pages/user/Password";
 import Wishlist from "./pages/user/Wishlist";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import "./sass/main.scss";
 
 import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
 import { currentUser } from "./functions/auth";
 
 const App = () => {
-
   const dispatch = useDispatch();
 
   // to check firebase auth state
