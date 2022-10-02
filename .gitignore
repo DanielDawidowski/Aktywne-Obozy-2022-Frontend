@@ -9,13 +9,13 @@
 /coverage
 
 # vscode
-/.vscode
-
+.vscode
+.env
 # production
-/build
+# /build
 
 # misc
-.env
+
 .DS_Store
 .env.local
 .env.development.local
