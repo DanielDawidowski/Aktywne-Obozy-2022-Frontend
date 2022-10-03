@@ -3,7 +3,7 @@ import Logo from "../assets/SVG/Logo/Logo";
 
 const Home = () => (
   <section className="home container">
-    <div class="temporery-text">
+    <div className="temporery-text">
       <Logo
         mainColor={"#24242a"}
         wheelColor={"#24242a"}
