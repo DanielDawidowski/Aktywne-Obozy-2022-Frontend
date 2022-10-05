@@ -1,45 +1,39 @@
-header {
-  nav {
-    padding: $size1;
-    ul {
+.header {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    &-item {
       display: grid;
-      grid-template-columns: repeat(9, 1fr);
-      li {
-        display: grid;
-        place-items: center;
+      place-items: center;
+    }
+    .hamburger-menu {
+      display: grid;
+      place-items: center;
+      @media (min-width: $layout-breakpoint-small) {
+        display: none;
       }
-      li:nth-child(2) {
-        grid-column: 2 / 3;
-      }
-      li:nth-child(3) {
-        grid-column: 4 / 5;
-      }
-      li:nth-child(4) {
-        grid-column: 5 / 6;
-      }
-      li:nth-child(5) {
-        grid-column: 6 / 7;
-      }
-      li:nth-child(6) {
-        grid-column: 8 / 9;
-      }
-      .logout {
-        grid-column: 9 / 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        svg {
-          width: $size3;
-          height: $size3;
+      button {
+        border: none;
+        outline: none;
+        width: 60px;
+        height: 60px;
+        z-index: 100;
+        background: none;
+        cursor: pointer;
+        span {
+          width: 40px;
+          height: 8px;
+          display: block;
+          border-radius: $borderRadius;
+          margin: 8px;
         }
       }
     }
   }
 }
 
-.header {
+header {
   width: 100%;
-  background: $red;
   border-bottom: 3px solid $black;
-
 }
+

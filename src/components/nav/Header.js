@@ -1,33 +1,21 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import firebase from "firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Logo from "../../assets/SVG/Logo/Logo";
-import LogoutSVG from "../../assets/SVG/Logout/Logout";
+import Menu from "./Menu";
 
-const Header = () => {
-  let dispatch = useDispatch();
+const Header = ({ toggleMenu, setToggleMenu }) => {
   let { user } = useSelector((state) => ({ ...state }));
 
-  let history = useHistory();
+  const hamburger = useRef(null);
 
   const handleClick = () => {};
 
-  const logout = () => {
-    firebase.auth().signOut();
-    dispatch({
-      type: "LOGOUT",
-      payload: null,
-    });
-    history.push("/login");
-  };
-
   return (
     <header className="header container">
-      <nav>
-        <ul>
-          <li>
+      <nav className="header__nav">
+        <ul className="header__list">
+          <li className="header__list-item">
             <Link to="/">
               <Logo
                 mainColor={"#24242a"}
@@ -37,36 +25,19 @@ const Header = () => {
               />
             </Link>
           </li>
-          <li>
-            <h3>toggle</h3>
+          <li class="header__list-item header-menu">
+            <Menu />
           </li>
-          <li
-          // onClick={() => handleClick()}
+          <div
+            class="hamburger-menu"
+            onClick={() => setToggleMenu(!toggleMenu)}
+            ref={hamburger}
           >
-            <Link to="/">
-              <h3>Morze</h3>
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <h3>Góry</h3>
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <h3>Kajaki</h3>
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <h3>Kontakt</h3>
-            </Link>
-          </li>
-          {user && (
-            <li className="logout" onClick={() => logout()}>
-              <LogoutSVG color={"#24242a"} />
-            </li>
-          )}
+            <button>
+              <span style={{ background: "#24242a" }}></span>
+              <span style={{ background: "#24242a" }}></span>
+            </button>
+          </div>
         </ul>
       </nav>
     </header>
