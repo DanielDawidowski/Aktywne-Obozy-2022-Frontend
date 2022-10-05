@@ -1,19 +1,13 @@
 import React from "react";
 import Layout from "../components/layout/layout";
-import Logo from "../assets/SVG/Logo/Logo";
+import Slider from "../components/slider/slider";
+import Banner from "../components/banner/banner";
 
 const Home = () => (
   <Layout>
     <section className="home container">
-      <div className="temporery-text">
-        <Logo
-          mainColor={"#24242a"}
-          wheelColor={"#24242a"}
-          animate
-          style={{ margin: "10px" }}
-        />
-        <p>Wracamy wkrótce :D</p>
-      </div>
+      <Banner />
+      <Slider />
     </section>
   </Layout>
 );

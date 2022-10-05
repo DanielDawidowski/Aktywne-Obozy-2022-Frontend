@@ -89,7 +89,7 @@ const RegisterComplete = ({ history }) => {
 
   return (
     <Layout>
-      <div className="container p-5">
+      <div className="container">
         <div className="row">
           <div className="col-md-6 offset-md-3">
             <h4>Register Complete</h4>
