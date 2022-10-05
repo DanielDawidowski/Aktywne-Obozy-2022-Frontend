@@ -51,7 +51,30 @@
     margin-top: $size1;
   }
 
-  li:last-of-type {
+  li:nth-child(5) {
+    position: relative;
+   }
+
+   li:nth-child(5)::before {
+    position: absolute;
+    content: "";
+    width: 120%;
+    height: 120%;
+    z-index: -1;
+    background: $green;
+    border-radius: $borderRadius;
+   }
+
+   li:nth-child(6) {
+    position: relative;
+   }
+
+   li:nth-child(6)::before {
+    position: absolute;
+    content: "";
+    width: 130%;
+    height: 130%;
+    z-index: -1;
     background: $white;
     border-radius: $borderRadius;
    }

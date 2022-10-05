@@ -25,11 +25,11 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
               />
             </Link>
           </li>
-          <li class="header__list-item header-menu">
+          <li className="header__list-item header-menu">
             <Menu />
           </li>
           <div
-            class="hamburger-menu"
+            className="hamburger-menu"
             onClick={() => setToggleMenu(!toggleMenu)}
             ref={hamburger}
           >

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import LogoutSVG from "../../assets/SVG/Logout/Logout";
 
-const Menu = ({ grid = false }) => {
+const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
   let dispatch = useDispatch();
   let { user } = useSelector((state) => ({ ...state }));
 
@@ -18,6 +18,7 @@ const Menu = ({ grid = false }) => {
       payload: null,
     });
     history.push("/");
+    setToggleMenu(!toggleMenu);
   };
 
   return (
@@ -25,25 +26,25 @@ const Menu = ({ grid = false }) => {
       <li className={"menu-item"}>
         <h3>toggle</h3>
       </li>
-      <li className={"menu-item"}>
+      <li className={"menu-item"} onClick={() => setToggleMenu(!toggleMenu)}>
         {/* <Link to={"/event/kajaki"}> */}
         <Link to="/">
           <h2 style={{ color: "#24242a" }}>Spływy</h2>
         </Link>
       </li>
-      <li className={"menu-item"}>
+      <li className={"menu-item"} onClick={() => setToggleMenu(!toggleMenu)}>
         {/* <Link to="/event/gory"> */}
         <Link to="/">
           <h2 style={{ color: "#24242a" }}>Góry</h2>
         </Link>
       </li>
-      <li className={"menu-item"}>
+      <li className={"menu-item"} onClick={() => setToggleMenu(!toggleMenu)}>
         {/* <Link to="/event/morze"> */}
         <Link to="/">
           <h2 style={{ color: "#24242a" }}>Morze</h2>
         </Link>
       </li>
-      <li className={"menu-item"}>
+      <li className={"menu-item"} onClick={() => setToggleMenu(!toggleMenu)}>
         <Link to="/">
           <h2 style={{ color: "#24242a" }}>Kontakt</h2>
         </Link>

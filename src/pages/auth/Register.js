@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../../firebase";
 import { useSelector } from "react-redux";
+import Layout from "../../components/layout/layout";
 
 const Register = ({ history }) => {
   const [email, setEmail] = useState("dvds1987@gmail.com");
@@ -46,14 +47,16 @@ const Register = ({ history }) => {
   );
 
   return (
-    <div className="container p-5">
-      <div className="row">
-        <div className="col-md-6 offset-md-3">
-          <h4>Register</h4>
-          {registerForm()}
+    <Layout>
+      <div className="container p-5">
+        <div className="row">
+          <div className="col-md-6 offset-md-3">
+            <h4>Register</h4>
+            {registerForm()}
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

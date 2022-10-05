@@ -68,8 +68,12 @@ const Navigation = ({ toggleMenu, setToggleMenu }) => {
                 </button>
               </motion.div>
             </motion.div>
-            <motion.div variants={item} class="navigation-menu">
-              <Menu grid />
+            <motion.div variants={item} className="navigation-menu">
+              <Menu
+                grid
+                toggleMenu={toggleMenu}
+                setToggleMenu={setToggleMenu}
+              />
             </motion.div>
           </motion.nav>
           <Menu />
