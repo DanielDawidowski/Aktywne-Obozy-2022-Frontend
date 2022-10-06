@@ -5,7 +5,7 @@ import Logo from "../../assets/SVG/Logo/Logo";
 import Menu from "./Menu";
 
 const Header = ({ toggleMenu, setToggleMenu }) => {
-  let { user } = useSelector((state) => ({ ...state }));
+  let { theme } = useSelector((state) => ({ ...state }));
 
   const hamburger = useRef(null);
 
@@ -18,8 +18,8 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
           <li className="header__list-item">
             <Link to="/">
               <Logo
-                mainColor={"#24242a"}
-                wheelColor={"#24242a"}
+                mainColor={!theme ? "#24242a" : "#fff"}
+                wheelColor={!theme ? "#24242a" : "#fff"}
                 animate
                 style={{ margin: "10px" }}
               />
@@ -34,8 +34,8 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
             ref={hamburger}
           >
             <button>
-              <span style={{ background: "#24242a" }}></span>
-              <span style={{ background: "#24242a" }}></span>
+              <span style={{ background: !theme ? "#24242a" : "#fff" }}></span>
+              <span style={{ background: !theme ? "#24242a" : "#fff" }}></span>
             </button>
           </div>
         </ul>

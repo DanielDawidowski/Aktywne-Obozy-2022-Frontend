@@ -14,6 +14,7 @@ a {
 
 h2 {
   font-size: $size3;
+  color: $white;
   @media (max-width: $layout-breakpoint-small) {
     font-size: $size4;
   }

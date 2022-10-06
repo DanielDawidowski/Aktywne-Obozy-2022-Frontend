@@ -47,8 +47,8 @@ const Navigation = ({ toggleMenu, setToggleMenu }) => {
           >
             <motion.div variants={item} className="navigation-header">
               <Logo
-                mainColor={theme === false ? "#24242a" : "#fff"}
-                wheelColor={theme === false ? "#24242a" : "#fff"}
+                mainColor={!theme ? "#24242a" : "#fff"}
+                wheelColor={!theme ? "#24242a" : "#fff"}
                 style={{ margin: "10px" }}
                 animate
               />
@@ -60,10 +60,10 @@ const Navigation = ({ toggleMenu, setToggleMenu }) => {
               >
                 <button>
                   <span
-                    style={{ background: theme === false ? "#24242a" : "#fff" }}
+                    style={{ background: !theme ? "#24242a" : "#fff" }}
                   ></span>
                   <span
-                    style={{ background: theme === false ? "#24242a" : "#fff" }}
+                    style={{ background: !theme ? "#24242a" : "#fff" }}
                   ></span>
                 </button>
               </motion.div>
