@@ -21,7 +21,7 @@ const letterAni = {
   },
 };
 
-const Banner = () => {
+const TextBanner = () => {
   const [playMarquee, setPlayMarquee] = useState(false);
 
   useEffect(() => {
@@ -35,6 +35,8 @@ const Banner = () => {
       <BannerRowTop title={"kolonie"} />
       <BannerRowTop title={"wycieczki"} />
       <BannerRowTop title={"kajaki"} />
+
+      {/* <BannerRowCenter title={"wycieczki"} playMarquee /> */}
       {/* <BannerRowBottom title={"Wybierz wakacje z nami"} /> */}
     </motion.div>
   );
@@ -124,4 +126,4 @@ const BannerRowCenter = ({ title, playMarquee }) => {
   );
 };
 
-export default Banner;
+export default TextBanner;

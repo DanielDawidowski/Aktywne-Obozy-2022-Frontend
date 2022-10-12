@@ -1,6 +1,12 @@
 .banner {
   z-index: 100;
-
+  position: absolute;
+  top: 25%;
+  left: -13%;
+  @media (max-width: $layout-breakpoint-small) {
+    top: 35%;
+    left: -5%;
+  }
 
   .banner-row {
     overflow: hidden;
@@ -19,12 +25,10 @@
       text-transform: uppercase;
 
       @media (max-width: $layout-breakpoint-small) {
-        font-size: $size5;
-      }
-
-      @media (max-width: $layout-breakpoint-xsmall) {
         font-size: $size4;
       }
+
+    
     }
     
     

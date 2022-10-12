@@ -4,5 +4,13 @@
   display: grid;
   grid-template-columns: repeat(2,1fr);
   place-items: center;
+  &-hero {
+    position: relative;
+  }
+  @media (max-width: $layout-breakpoint-small) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+  }
 }
 

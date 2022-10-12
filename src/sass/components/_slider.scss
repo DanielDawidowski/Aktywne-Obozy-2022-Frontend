@@ -4,38 +4,6 @@
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  
-}
-
-button {
-  padding: 16px;
-  font-size: 18px;
-  width: 64px;
-  aspect-ratio: 1;
-  border-radius: 32px;
-  background-color: #0f0c29;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  color: white;
-}
-
-button:hover {
-  background-color: #24243e;
-}
-
-.prevButton {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-}
-
-.nextButton {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
 }
 
 .slides {
@@ -47,3 +15,62 @@ button:hover {
   object-fit: cover;
   object-position: center;
 }
+
+.slides.big {
+  display: block;
+  @media (max-width: $layout-breakpoint-small) {
+    display: none;
+  }
+}
+
+.slides.small {
+  display: block;
+  @media (min-width: $layout-breakpoint-small) {
+    display: none;
+  }
+}
+
+.slider-btn {
+  padding: 16px;
+  font-size: 18px;
+  width: 64px;
+  aspect-ratio: 1;
+  border-radius: 32px;
+  background-color: #0f0c29;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+
+  @media (max-width: $layout-breakpoint-small) {
+    font-size: 8px;
+    width: 44px;
+  }
+}
+
+.slider-btn:hover {
+  background-color: #4abd33;
+}
+
+.prevButton {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background-color: $green;
+  @media (max-width: $layout-breakpoint-small) {
+    top: 75%;
+  }
+}
+
+.nextButton {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  background-color: $green;
+  @media (max-width: $layout-breakpoint-small) {
+    top: 75%;
+  }
+}
+

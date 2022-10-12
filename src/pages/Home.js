@@ -1,12 +1,18 @@
 import React from "react";
 import Layout from "../components/layout/layout";
 import Slider from "../components/slider/slider";
-import Banner from "../components/banner/banner";
+import TextBanner from "../components/banner/banner";
+import HomeBanner from "../assets/SVG/HomeBanner/HomeBanner";
+import HomeBannerBig from "../assets/SVG/HomeBanner/HomeBannerBig";
 
 const Home = () => (
   <Layout>
     <section className="home container">
-      <Banner />
+      <div class="home-hero">
+        <TextBanner />
+        <HomeBanner />
+        <HomeBannerBig />
+      </div>
       <Slider />
     </section>
   </Layout>
