@@ -1,8 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { createClient } from "../functions/client";
+import { createClientEmail, createAuthorEmail } from "../functions/email";
+
 import { getEvent } from "../functions/event";
 import ClientCreateForm from "../components/forms/ClientCreateForm";
 import Layout from "../components/layout/layout";
@@ -69,11 +71,20 @@ const Event = () => {
       price: price,
     };
 
+    const createEmailData = {
+      name: clientName,
+      email: clientEmail,
+      phone: clientPhone,
+      eventName: name,
+    };
+
     createClient(createClientData)
       .then((res) => {
         console.log(res);
+        createClientEmail(createEmailData);
+        createAuthorEmail(createEmailData);
         toast.success(`Dodano ${res.data.name}`);
-        setValues({ name: "", email: "", phone: "", age: "", eventName: "" });
+        setValues({ name: "", email: "", phone: "", age: "" });
       })
       .catch((err) => {
         console.log(err);
