@@ -7,8 +7,8 @@ import HomeBannerBig from "../assets/SVG/HomeBanner/HomeBannerBig";
 
 const Home = () => (
   <Layout>
-    <section className="home container">
-      <div class="home-hero">
+    <section id="home" className="home container">
+      <div className="home-hero">
         <TextBanner />
         <HomeBanner />
         <HomeBannerBig />

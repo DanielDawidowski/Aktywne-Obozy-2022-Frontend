@@ -132,7 +132,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
         {/* <Link to={"/event/kajaki"}> */}
-        <Link to="/">
+        <Link to="/splywy">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Spływy</h2>
         </Link>
       </li>
@@ -141,7 +141,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
         {/* <Link to="/event/gory"> */}
-        <Link to="/">
+        <Link to="/gory">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Góry</h2>
         </Link>
       </li>
@@ -150,7 +150,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
         {/* <Link to="/event/morze"> */}
-        <Link to="/">
+        <Link to="/morze">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Morze</h2>
         </Link>
       </li>
