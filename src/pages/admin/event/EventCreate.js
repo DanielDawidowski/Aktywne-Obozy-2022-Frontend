@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Router } from "react-router-dom";
 import { toast } from "react-toastify";
-// import AdminNav from "../../components/nav/AdminNav";
+import AdminNav from "../../../components/nav/AdminNav";
 import { useSelector } from "react-redux";
 import { createEvent } from "../../../functions/event";
 import EventCreateForm from "../../../components/forms/EventCreateForm";
@@ -67,9 +67,9 @@ const EventCreate = ({ history }) => {
   return (
     <Layout footer={false}>
       <div className="container">
-        {/* <div className="col-md-2">
+        <div className="col-md-2">
           <AdminNav />
-        </div> */}
+        </div>
 
         <div className="col">
           {/* {loading ? (
