@@ -158,7 +158,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
-        <Link to="">
+        <Link to="/contact">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Kontakt</h2>
         </Link>
       </li>

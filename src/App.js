@@ -6,6 +6,7 @@ import Register from "./pages/auth/Register";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Event from "./pages/Event";
+import Contact from "./pages/Contact";
 import RegisterComplete from "./pages/auth/RegisterComplete";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import History from "./pages/user/History";
@@ -68,6 +69,7 @@ const App = () => {
       />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/contact" component={Contact} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/register/complete" component={RegisterComplete} />
