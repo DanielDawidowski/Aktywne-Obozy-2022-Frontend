@@ -154,6 +154,16 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Morze</h2>
         </Link>
       </li>
+      {user && (
+        <li
+          className="menu-item"
+          onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+        >
+          <Link to="/admin/dashboard">
+            <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Admin</h2>
+          </Link>
+        </li>
+      )}
       <li
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}

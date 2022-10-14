@@ -3,14 +3,14 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import AdminNav from "../../../components/nav/AdminNav";
-import { getEventsByCount } from "../../../functions/event";
+import { getClients } from "../../../functions/client";
 // import AdminEventCard from "../../../components/card";
-import { removeEvent } from "../../../functions/event";
+import { removeClient } from "../../../functions/client";
 
 import Layout from "../../../components/layout/layout";
 
 const EventsList = () => {
-  const [events, setEvents] = useState([]);
+  const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(false);
 
   // redux
@@ -22,9 +22,9 @@ const EventsList = () => {
 
   const loadAllEvents = () => {
     setLoading(true);
-    getEventsByCount(100)
+    getClients()
       .then((res) => {
-        setEvents(res.data);
+        setClients(res.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -37,7 +37,7 @@ const EventsList = () => {
     // let answer = window.confirm("Delete?");
     if (window.confirm("Delete?")) {
       // console.log("send delete request", slug);
-      removeEvent(slug, user.token)
+      removeClient(slug, user.token)
         .then((res) => {
           toast.error(`${res.data.name} is deleted`);
           loadAllEvents();
@@ -62,8 +62,8 @@ const EventsList = () => {
             <h4 className="mt-4">Wyjazdy</h4>
           )}
           <div className="row">
-            {events &&
-              events.map((event) => (
+            {clients &&
+              clients.map((event) => (
                 <div
                   key={event._id}
                   className="col-md-12 mt-3 border border-primary"

@@ -41,10 +41,10 @@ const EventCreate = ({ history }) => {
     e.preventDefault();
     createEvent(values, user.token)
       .then((res) => {
-        console.log(res);
-        // window.alert("Doadano nowy wyjazd");
         toast.success(`Dodano ${res.data.name}`);
         history.push("/admin/events");
+        // console.log(res);
+        // window.alert("Doadano nowy wyjazd");
       })
       .catch((err) => {
         console.log(err);
