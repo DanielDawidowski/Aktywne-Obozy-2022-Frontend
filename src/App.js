@@ -16,6 +16,7 @@ import Password from "./pages/user/Password";
 import Wishlist from "./pages/user/Wishlist";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import EventCreate from "./pages/admin/event/EventCreate";
+import EventsList from "./pages/admin/event/EventsList";
 
 import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
@@ -81,6 +82,7 @@ const App = () => {
         <UserRoute exact path="/user/wishlist" component={Wishlist} />
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
         <AdminRoute exact path="/admin/event" component={EventCreate} />
+        <AdminRoute exact path="/admin/events" component={EventsList} />
       </Switch>
     </>
   );

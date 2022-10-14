@@ -65,7 +65,7 @@ const EventCreate = ({ history }) => {
   };
 
   return (
-    <Layout footer={false}>
+    <Layout>
       <div className="container">
         <div className="col-md-2">
           <AdminNav />

@@ -29,7 +29,7 @@ const EventCreateForm = ({
           type="text"
           name="name"
           className="form-control"
-          value={name}
+          defaultValue={name}
           onChange={handleChange}
           placeholder={name}
         />
@@ -41,7 +41,7 @@ const EventCreateForm = ({
           type="text"
           name="description"
           className="form-control"
-          value={description}
+          defaultValue={description}
           onChange={handleChange}
         />
       </div>
@@ -52,7 +52,7 @@ const EventCreateForm = ({
           type="number"
           name="price"
           className="form-control"
-          value={price}
+          defaultValue={price}
           onChange={handleChange}
         />
       </div>
@@ -63,7 +63,7 @@ const EventCreateForm = ({
           type="number"
           name="amount"
           className="form-control"
-          value={amount}
+          defaultValue={amount}
           onChange={handleChange}
         />
       </div>
@@ -74,7 +74,7 @@ const EventCreateForm = ({
           type="date"
           name="startDate"
           className="form-control"
-          value={startDate}
+          defaultValue={startDate}
           onChange={handleChange}
         />
       </div>
@@ -85,7 +85,7 @@ const EventCreateForm = ({
           type="date"
           name="endDate"
           className="form-control"
-          value={endDate}
+          defaultValue={endDate}
           onChange={handleChange}
         />
       </div>
@@ -96,7 +96,7 @@ const EventCreateForm = ({
           name="status"
           className="form-control"
           onChange={handleChange}
-          value={status}
+          defaultValue={status}
         >
           <option value="Aktualne">Aktualne</option>
           <option value="Nieaktualne">Nieaktualne</option>
@@ -109,12 +109,10 @@ const EventCreateForm = ({
           name="category"
           className="form-control"
           onChange={handleEventChange}
-          value={typeEvent}
+          defaultValue={typeEvent}
           required
         >
-          <option selected aria-disabled>
-            Wybierz
-          </option>
+          <option aria-disabled>Wybierz</option>
           <option value="gory">Góry</option>
           <option value="splywy">Spływy</option>
           <option value="morze">Morze</option>

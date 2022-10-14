@@ -12,3 +12,10 @@ export const createEvent = async (event, authtoken) =>
       authtoken,
     },
   });
+
+export const removeEvent = async (slug, authtoken) =>
+  await axios.delete(`${process.env.REACT_APP_API}/event/${slug}`, {
+    headers: {
+      authtoken,
+    },
+  });
