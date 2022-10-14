@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { createClient } from "../functions/client";
 import { createClientEmail, createAuthorEmail } from "../functions/email";
 
 import { getEvent } from "../functions/event";
 import ClientCreateForm from "../components/forms/ClientCreateForm";
 import Layout from "../components/layout/layout";
+import GoBackButton from "../components/nav/GoBackButton";
 
 const initialState = {
   name: "",
@@ -22,6 +23,8 @@ const Event = () => {
   const [loading, setLoading] = useState(false);
 
   let location = useLocation();
+
+  let history = useHistory();
 
   let eventPath = location.pathname.slice(1);
   let eventType = eventPath.substring(eventPath.lastIndexOf("/")).slice(1);
@@ -102,6 +105,8 @@ const Event = () => {
     <Layout>
       <section id="event" className="event container">
         <div className="event-hero">
+          <GoBackButton />
+
           <h3>{name}</h3>
           {/* <h3>{description}</h3> */}
           <h3>Cena:{price}</h3>
