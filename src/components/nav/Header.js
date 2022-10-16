@@ -9,7 +9,7 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
 
   const hamburger = useRef(null);
 
-  const handleClick = () => {};
+  // const handleClick = () => {};
 
   return (
     <header className="header container">

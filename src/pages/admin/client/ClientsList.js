@@ -63,19 +63,20 @@ const EventsList = () => {
           )}
           <div className="row">
             {clients &&
-              clients.map((event) => (
+              clients.map((client) => (
                 <div
-                  key={event._id}
+                  key={client._id}
                   className="col-md-12 mt-3 border border-primary"
                 >
-                  <h1 className="mt-3 mb-3">{event.name}</h1>
-                  <h1 className="mb-3">{event.typeEvent}</h1>
+                  {/* {console.log(event.event.name)} */}
+                  <h1 className="mt-3 mb-3">{client.name}</h1>
+                  <h1 className="mb-3">{client.event.name}</h1>
 
-                  <span onClick={() => handleRemove(event.slug)}>
+                  <span onClick={() => handleRemove(client.slug)}>
                     <h6>remove</h6>
                   </span>
                   {/* <AdminEventCard event={event} handleRemove={handleRemove} /> */}
-                  <Link to={`/admin/event/${event.slug}`}>Update</Link>
+                  <Link to={`/admin/client/${client.slug}`}>Update</Link>
                 </div>
               ))}
           </div>

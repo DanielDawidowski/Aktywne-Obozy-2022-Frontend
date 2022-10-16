@@ -20,7 +20,7 @@ const initialState = {
   startDate: "",
   endDate: "",
   images: [],
-  status: "",
+  status: "Aktualne",
 };
 
 const EventCreate = ({ history }) => {

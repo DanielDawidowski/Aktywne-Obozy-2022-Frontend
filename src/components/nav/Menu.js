@@ -127,6 +127,21 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
           </ThemeContext.Consumer>
         </div>
       </li>
+      {user && (
+        <>
+          <li className="logout menu-item" onClick={() => logout(grid)}>
+            <LogoutSVG color={!theme ? "#24242a" : "#fff"} />
+          </li>
+          <li
+            className="menu-item"
+            onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+          >
+            <Link to="/admin/dashboard">
+              <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Admin</h2>
+            </Link>
+          </li>
+        </>
+      )}
       <li
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
@@ -154,29 +169,14 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Morze</h2>
         </Link>
       </li>
-      {user && (
-        <li
-          className="menu-item"
-          onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
-        >
-          <Link to="/admin/dashboard">
-            <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Admin</h2>
-          </Link>
-        </li>
-      )}
       <li
-        className="menu-item"
+        className="menu-item menu-item-contact"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
         <Link to="/contact">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Kontakt</h2>
         </Link>
       </li>
-      {user && (
-        <li className="logout menu-item" onClick={() => logout(grid)}>
-          <LogoutSVG color={!theme ? "#24242a" : "#fff"} />
-        </li>
-      )}
     </ul>
   );
 };

@@ -19,3 +19,10 @@ export const removeEvent = async (slug, authtoken) =>
       authtoken,
     },
   });
+
+export const updateEvent = async (slug, event, authtoken) =>
+  await axios.put(`${process.env.REACT_APP_API}/event/${slug}`, event, {
+    headers: {
+      authtoken,
+    },
+  });

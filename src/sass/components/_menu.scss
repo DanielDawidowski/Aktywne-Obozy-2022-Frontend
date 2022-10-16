@@ -1,41 +1,27 @@
 .menu {
     z-index: 1;
     padding-top: $size2;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
     @media (max-width: $layout-breakpoint-small) {
       display: none;
     }
-    li {
+    .menu-item {
       font-size: $size2;
       display: grid;
       place-items: center; 
       width: 100px;
     }
-    li:nth-child(0) {
-      grid-column: 1 / 2;
-    }
-    li:nth-child(2) {
-      grid-column: 4 / 5;
-    }
-    li:nth-child(3) {
-      grid-column: 5 / 6;
-    }
-    li:nth-child(4) {
-      grid-column: 6 / 7;
-    }
-    li:nth-child(5) {
-      grid-column: 8 / 9;
-      h2 {
-        font-size: $size2;
-      }
-
-    }
-    
     
   }
 
-
+.logout {
+  svg {
+    width: $size3;
+    height: $size3;
+  }
+}
 
 .menu-nav {
   display: flex;
@@ -57,28 +43,17 @@
     height: 60px;
    }
 
-  li:nth-child(5) {
-    position: relative;
-   }
 
-   li:nth-child(5)::before {
+
+}
+
+.menu-item-contact {
+    position: relative;
+
+    &::before {
     position: absolute;
     content: "";
-    width: 120%;
-    height: 120%;
-    z-index: -1;
-    background: $green;
-    border-radius: $borderRadius;
-   }
-
-   li:nth-child(6) {
-    position: relative;
-   }
-
-   li:nth-child(6)::before {
-    position: absolute;
-    content: "";
-    width: 130%;
+    width: 115%;
     height: 130%;
     z-index: -1;
     background: $white;
@@ -86,13 +61,4 @@
    }
 }
 
-.logout {
-  grid-column: 9 / 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  svg {
-    width: $size3;
-    height: $size3;
-  }
-}
+
