@@ -16,6 +16,7 @@ import Password from "./pages/user/Password";
 import Wishlist from "./pages/user/Wishlist";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import EventCreate from "./pages/admin/event/EventCreate";
+import EventUpdate from "./pages/admin/event/EventUpdate";
 import EventsList from "./pages/admin/event/EventsList";
 import ClientsList from "./pages/admin/client/ClientsList";
 
@@ -83,6 +84,7 @@ const App = () => {
         <UserRoute exact path="/user/wishlist" component={Wishlist} />
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
         <AdminRoute exact path="/admin/event" component={EventCreate} />
+        <AdminRoute exact path="/admin/event/:slug" component={EventUpdate} />
         <AdminRoute exact path="/admin/events" component={EventsList} />
         <AdminRoute exact path="/admin/clients" component={ClientsList} />
       </Switch>
