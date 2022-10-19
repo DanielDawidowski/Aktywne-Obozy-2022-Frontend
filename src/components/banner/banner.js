@@ -73,7 +73,7 @@ const BannerRowTop = ({ title }) => {
 
 const BannerRowBottom = ({ title }) => {
   return (
-    <div className={"banner-row title-red"}>
+    <div className={"banner-row"}>
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

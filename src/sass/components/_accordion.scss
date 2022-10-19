@@ -1,0 +1,47 @@
+.accordion {
+  &__header {
+    display: flex;
+    // background: $yellow;
+    .accordion__title {
+      // background: $red;
+      width: 100%;
+      text-align: center;
+      height: 150px;
+      position: relative;
+      h3 {
+        font-size: $size4;
+      }
+
+      .accordion__icon{
+        // background: $blue;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          width: 65px;
+          height: 65px;
+        }
+        .accordion__date {
+          display: grid;
+          place-content: center;
+          h4 {
+            font-size: $size2;
+          }
+          h4:last-of-type {
+            font-size: $size1;
+          }
+        }
+      }
+    }
+    svg {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &__content {
+    // background: $grey;
+    overflow: hidden;
+  }
+}

@@ -9,7 +9,7 @@
     bottom: -1px;
     left: 0;
     // background: $turquoise;
-    animation: 3s animation;
+    animation: 3s animationHeader;
     border-bottom: 1px solid $turquoise;
   }
   &__list {
@@ -52,11 +52,9 @@
   }
 }
 
-header {
-  width: 100%;
-}
 
-@keyframes animation {
+
+@keyframes animationHeader {
   from {
     width: 0;
   }

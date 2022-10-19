@@ -1,0 +1,12 @@
+.card {
+  padding: $size1;
+  // background: $turquoise;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  h4 {
+    color: $black;
+    font-size: $size4;
+  }
+}
+

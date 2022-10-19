@@ -136,7 +136,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
             className="menu-item"
             onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
           >
-            <Link to="/admin/dashboard">
+            <Link style={{ textDecoration: "none" }} to="/admin/dashboard">
               <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Admin</h2>
             </Link>
           </li>
@@ -147,7 +147,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
         {/* <Link to={"/event/kajaki"}> */}
-        <Link to="/events/splywy">
+        <Link style={{ textDecoration: "none" }} to="/events/splywy">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Spływy</h2>
         </Link>
       </li>
@@ -156,7 +156,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
         {/* <Link to="/event/gory"> */}
-        <Link to="/events/gory">
+        <Link style={{ textDecoration: "none" }} to="/events/gory">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Góry</h2>
         </Link>
       </li>
@@ -165,7 +165,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
         {/* <Link to="/event/morze"> */}
-        <Link to="/events/morze">
+        <Link style={{ textDecoration: "none" }} to="/events/morze">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Morze</h2>
         </Link>
       </li>
@@ -173,7 +173,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         className="menu-item menu-item-contact"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
       >
-        <Link to="/contact">
+        <Link style={{ textDecoration: "none" }} to="/contact">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Kontakt</h2>
         </Link>
       </li>

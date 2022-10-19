@@ -108,7 +108,7 @@ const ClientUpdateForm = ({
         >
           <option aria-disabled>Wybierz</option>
           <option value="gory">Góry</option>
-          <option value="splywy">Kajaki</option>
+          <option value="splywy">Spływy</option>
           <option value="morze">Morze</option>
         </select>
       </div>

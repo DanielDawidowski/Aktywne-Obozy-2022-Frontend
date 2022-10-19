@@ -61,6 +61,7 @@ const EventsList = () => {
           ) : (
             <h4 className="mt-4">Wyjazdy</h4>
           )}
+
           <div className="row">
             {events &&
               events.map((event) => (
