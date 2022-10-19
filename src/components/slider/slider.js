@@ -70,7 +70,17 @@ const Slider = () => {
   }
 
   return (
-    <div className="container slideshow">
+    <motion.div
+      initial={{ opacity: 0, x: 20, y: -20 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        y: 0,
+        transition: { ease: "easeInOut", duration: 1.6 },
+      }}
+      exit={{ opacity: 0, x: 20 }}
+      className="container slideshow"
+    >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           variants={variants}
@@ -104,7 +114,7 @@ const Slider = () => {
       <button className="slider-btn nextButton" onClick={nextStep}>
         ▶
       </button>
-    </div>
+    </motion.div>
   );
 };
 

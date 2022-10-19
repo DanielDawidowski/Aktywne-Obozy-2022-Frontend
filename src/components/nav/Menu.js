@@ -78,7 +78,13 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
   };
 
   return (
-    <ul className={grid ? "menu-nav" : "menu"}>
+    <motion.ul
+      className={grid ? "menu-nav" : "menu"}
+      variants={variants}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <li className="menu-item">
         <div id="toggle-theme">
           <ThemeContext.Consumer>
@@ -104,6 +110,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
                         duration: 1.8,
                       },
                     }}
+                    exit={{ opacity: 0, x: -100 }}
                   >
                     <Sun color={"#fff"} />
                   </motion.span>
@@ -118,6 +125,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
                         duration: 1.8,
                       },
                     }}
+                    exit={{ opacity: 0, x: -100 }}
                   >
                     <Moon color={"#24242a"} />
                   </motion.span>
@@ -129,55 +137,64 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
       </li>
       {user && (
         <>
-          <li className="logout menu-item" onClick={() => logout(grid)}>
+          <motion.li
+            className="logout menu-item"
+            onClick={() => logout(grid)}
+            variants={item}
+          >
             <LogoutSVG color={!theme ? "#24242a" : "#fff"} />
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             className="menu-item"
             onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+            variants={item}
           >
             <Link style={{ textDecoration: "none" }} to="/admin/dashboard">
               <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Admin</h2>
             </Link>
-          </li>
+          </motion.li>
         </>
       )}
-      <li
+      <motion.li
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+        variants={item}
       >
         {/* <Link to={"/event/kajaki"}> */}
         <Link style={{ textDecoration: "none" }} to="/events/splywy">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Spływy</h2>
         </Link>
-      </li>
-      <li
+      </motion.li>
+      <motion.li
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+        variants={item}
       >
         {/* <Link to="/event/gory"> */}
         <Link style={{ textDecoration: "none" }} to="/events/gory">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Góry</h2>
         </Link>
-      </li>
-      <li
+      </motion.li>
+      <motion.li
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+        variants={item}
       >
         {/* <Link to="/event/morze"> */}
         <Link style={{ textDecoration: "none" }} to="/events/morze">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Morze</h2>
         </Link>
-      </li>
-      <li
+      </motion.li>
+      <motion.li
         className="menu-item menu-item-contact"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+        variants={item}
       >
         <Link style={{ textDecoration: "none" }} to="/contact">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Kontakt</h2>
         </Link>
-      </li>
-    </ul>
+      </motion.li>
+    </motion.ul>
   );
 };
 

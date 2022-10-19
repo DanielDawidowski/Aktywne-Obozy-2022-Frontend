@@ -38,7 +38,6 @@ const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [expanded, setExpanded] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
 
   let location = useLocation();
 
@@ -46,7 +45,7 @@ const Events = () => {
   let typeEvent = eventPath.substring(eventPath.lastIndexOf("/")).slice(1);
   console.log(typeEvent);
 
-  const showEvent = (arr) => {
+  const showTypeEvent = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       if (typeEvent === arr[i].typeEvent) return arr[i].title;
     }
@@ -68,7 +67,7 @@ const Events = () => {
     }
   };
 
-  let { theme } = useSelector((state) => ({ ...state }));
+  // let { theme } = useSelector((state) => ({ ...state }));
 
   useEffect(() => {
     loadAllEvents();
@@ -93,12 +92,35 @@ const Events = () => {
     <Layout>
       <section id="events">
         <div className="events container">
-          <div className="events__image">{showImageLeft(typesEvents)}</div>
-          <div className="events__list">
+          <motion.div
+            className="events__image"
+            initial={{ opacity: 0, x: -20, y: -20 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              y: 0,
+              transition: { ease: "easeInOut", duration: 1.6 },
+            }}
+            exit={{ opacity: 0 }}
+          >
+            {showImageLeft(typesEvents)}
+          </motion.div>
+          <motion.div className="events__list">
             {loading ? (
-              <h3 style={{ color: "red" }}>...loading</h3>
+              <motion.h3 style={{ color: "red" }}>...loading</motion.h3>
             ) : (
-              <h1 className="events__title">{showEvent(typesEvents)}</h1>
+              <motion.h1
+                className="events__title"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { ease: "easeInOut", duration: 3.6 },
+                }}
+                exit={{ opacity: 0, y: -20 }}
+              >
+                {showTypeEvent(typesEvents)}
+              </motion.h1>
             )}
             {events &&
               events.map((e, i) => {
@@ -107,10 +129,13 @@ const Events = () => {
                     <motion.div
                       key={i}
                       className="events__list-item"
-                      initial={{ height: 0 }}
+                      initial={{ opacity: 0, width: 0 }}
                       animate={{
-                        height: isOpen && "100%",
+                        opacity: 1,
+                        width: "100%",
+                        transition: { ease: "easeInOut", duration: 1.6 },
                       }}
+                      exit={{ opacity: 0, x: 30 }}
                     >
                       <AnimatePresence>
                         <Accordion
@@ -125,8 +150,20 @@ const Events = () => {
                   )
                 );
               })}
-          </div>
-          <div className="events__right">{showImageRight(typesEvents)}</div>
+          </motion.div>
+          <motion.div
+            className="events__right"
+            initial={{ opacity: 0, x: 20, y: -20 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              y: 0,
+              transition: { ease: "easeInOut", duration: 1.6 },
+            }}
+            exit={{ opacity: 0, x: 20 }}
+          >
+            {showImageRight(typesEvents)}
+          </motion.div>
         </div>
       </section>
     </Layout>

@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { AnimatePresence } from "framer-motion";
+import { auth } from "./firebase";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Home from "./pages/Home";
@@ -20,8 +23,6 @@ import EventUpdate from "./pages/admin/event/EventUpdate";
 import EventsList from "./pages/admin/event/EventsList";
 import ClientsList from "./pages/admin/client/ClientsList";
 
-import { auth } from "./firebase";
-import { useDispatch } from "react-redux";
 import { currentUser } from "./functions/auth";
 
 import "./sass/main.scss";
@@ -29,6 +30,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
 
   // to check firebase auth state
   useEffect(() => {
@@ -70,24 +72,30 @@ const App = () => {
         draggable
         pauseOnHover
       />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/register/complete" component={RegisterComplete} />
-        <Route exact path="/forgot/password" component={ForgotPassword} />
-        <Route exact path="/events/:eventType" component={Events} />
-        <Route exact path="/event/:eventType/:slug" component={Event} />
-        <UserRoute exact path="/user/history" component={History} />
-        <UserRoute exact path="/user/password" component={Password} />
-        <UserRoute exact path="/user/wishlist" component={Wishlist} />
-        <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
-        <AdminRoute exact path="/admin/event" component={EventCreate} />
-        <AdminRoute exact path="/admin/event/:slug" component={EventUpdate} />
-        <AdminRoute exact path="/admin/events" component={EventsList} />
-        <AdminRoute exact path="/admin/clients" component={ClientsList} />
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch key={location.pathname} location={location}>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/register/complete" component={RegisterComplete} />
+          <Route exact path="/forgot/password" component={ForgotPassword} />
+          <Route exact path="/events/:eventType" component={Events} />
+          <Route exact path="/event/:eventType/:slug" component={Event} />
+          <UserRoute exact path="/user/history" component={History} />
+          <UserRoute exact path="/user/password" component={Password} />
+          <UserRoute exact path="/user/wishlist" component={Wishlist} />
+          <AdminRoute
+            exact
+            path="/admin/dashboard"
+            component={AdminDashboard}
+          />
+          <AdminRoute exact path="/admin/event" component={EventCreate} />
+          <AdminRoute exact path="/admin/event/:slug" component={EventUpdate} />
+          <AdminRoute exact path="/admin/events" component={EventsList} />
+          <AdminRoute exact path="/admin/clients" component={ClientsList} />
+        </Switch>
+      </AnimatePresence>
     </>
   );
 };

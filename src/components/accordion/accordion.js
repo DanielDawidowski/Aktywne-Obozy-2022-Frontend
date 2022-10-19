@@ -43,7 +43,16 @@ const Accordion = ({ details, expanded, setExpanded, children }) => {
         {showIcon(iconsArray)}
         <div className="accordion__title">
           <motion.div animate={{ y: isOpen ? 20 : 40 }}>
-            <h3>{name}</h3>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { ease: "easeInOut", duration: 4.6 },
+              }}
+              exit={{ opacity: 0 }}
+            >
+              {name}
+            </motion.h3>
           </motion.div>
           {isOpen && status === "Aktualne" ? (
             <motion.div

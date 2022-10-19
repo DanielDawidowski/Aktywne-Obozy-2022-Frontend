@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Logo from "../../assets/SVG/Logo/Logo";
@@ -15,7 +16,16 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
     <header className="header container">
       <nav className="header__nav">
         <ul className="header__list">
-          <li className="header__list-item">
+          <motion.li
+            className="header__list-item"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              transition: { ease: "easeInOut", duration: 1.6 },
+            }}
+            exit={{ opacity: 0, x: -100 }}
+          >
             <Link to="/">
               <Logo
                 mainColor={!theme ? "#24242a" : "#fff"}
@@ -24,11 +34,11 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
                 style={{ margin: "10px" }}
               />
             </Link>
-          </li>
-          <li className="header__list-item header-menu">
+          </motion.li>
+          <motion.li className="header__list-item header-menu">
             <Menu />
-          </li>
-          <div
+          </motion.li>
+          <motion.div
             className="hamburger-menu"
             onClick={() => setToggleMenu(!toggleMenu)}
             ref={hamburger}
@@ -37,7 +47,7 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
               <span style={{ background: !theme ? "#24242a" : "#fff" }}></span>
               <span style={{ background: !theme ? "#24242a" : "#fff" }}></span>
             </button>
-          </div>
+          </motion.div>
         </ul>
       </nav>
     </header>

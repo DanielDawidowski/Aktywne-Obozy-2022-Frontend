@@ -4,14 +4,21 @@ import { motion } from "framer-motion";
 const banner = {
   animate: {
     transition: {
-      delayChildren: 0.4,
+      delayChildren: 0.1,
       staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
+      staggerDirection: -1,
     },
   },
 };
 
 const letterAni = {
-  initial: { y: 400 },
+  initial: { y: 100 },
   animate: {
     y: 0,
     transition: {
@@ -19,6 +26,7 @@ const letterAni = {
       duration: 1,
     },
   },
+  exit: { y: 100 },
 };
 
 const TextBanner = () => {
@@ -48,6 +56,7 @@ const AnimatedLetters = ({ title, disabled }) => (
     variants={disabled ? null : banner}
     initial="initial"
     animate="animate"
+    exit="exit"
   >
     {[...title].map((letter, i) => (
       <motion.span

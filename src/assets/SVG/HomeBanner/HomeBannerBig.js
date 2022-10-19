@@ -5,7 +5,7 @@ const item = {
   hidden: {
     opacity: 0,
   },
-  show: {
+  animate: {
     opacity: 1,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
@@ -14,18 +14,22 @@ const item = {
   },
   exit: {
     opacity: 0,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.8,
-    },
   },
 };
 
 //Variants
 const variants = {
-  show: {
+  animate: {
     transition: {
-      staggerChildren: 0.05,
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
+      staggerDirection: -1,
     },
   },
 };
@@ -112,7 +116,20 @@ const HomeBannerSVGBig = ({ color = "#ffffff" }) => {
             />
           </motion.g>
 
-          <g id="Group 172">
+          <motion.g
+            id="Group 172"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                ease: "easeInOut",
+                duration: 4.8,
+              },
+            }}
+            exit={{
+              opacity: 0,
+            }}
+          >
             <path
               id="grass"
               d="M447.5 205C462.688 205 475 192.688 475 177.5C475 162.312 462.688 150 447.5 150C432.312 150 420 162.312 420 177.5C420 192.688 432.312 205 447.5 205Z"
@@ -152,7 +169,7 @@ const HomeBannerSVGBig = ({ color = "#ffffff" }) => {
                 />
               </g>
             </g>
-          </g>
+          </motion.g>
           <motion.path
             initial={{ opacity: 0, y: -100 }}
             animate={{
@@ -302,7 +319,7 @@ const HomeBannerSVGBig = ({ color = "#ffffff" }) => {
             id="Group 158"
             variants={variants}
             initial="hidden"
-            animate="show"
+            animate="animate"
             exit="exit"
           >
             <motion.rect
