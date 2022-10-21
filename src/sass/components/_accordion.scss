@@ -21,15 +21,28 @@
         svg {
           width: 65px;
           height: 65px;
+          @media (max-width: $layout-breakpoint-small) {
+            width: 40px;
+            height: 40px;
+          }
         }
         .accordion__date {
           display: grid;
           place-content: center;
           h4 {
             font-size: $size2;
+            color: $green;
+            @media (max-width: $layout-breakpoint-small) {
+              font-size: $size1;
+            }
           }
           h4:last-of-type {
             font-size: $size1;
+            color: $green;
+            margin-top: 4px;
+            @media (max-width: $layout-breakpoint-small) {
+              font-size: 12px;
+            }
           }
         }
       }

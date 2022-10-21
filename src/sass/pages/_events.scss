@@ -4,13 +4,22 @@
   display: flex;
   flex-direction: row;
   // align-items: center;
+  @media (max-width: $layout-breakpoint-small) {
+    display: grid;
+  }
   &__image {
     margin-top: $size4;
+    @media (max-width: $layout-breakpoint-small) {
+      display: none;
+    }
   }
   
   &__list {
     height: 100%;
     margin: $size4 0 $size5 $size4;
+    @media (max-width: $layout-breakpoint-small) {
+      margin: $size1;
+    }
     .events__title {
       position: relative;
       display: inline;
@@ -40,6 +49,9 @@
       min-height: 150px;
       max-width: 350px;
       background: $white;
+      @media (max-width: $layout-breakpoint-small) {
+        max-width: 250px;
+      }
       &::before {
         content: "";
         height: 110%;
@@ -58,6 +70,12 @@
     margin: $size4 0 0 $size5;
     height: 100%;
     border-radius: $borderRadius;
+    @media (max-width: $layout-breakpoint-small) {
+      margin: $size1;
+      img {
+        width: 90%;
+      }
+    }
     img {
       object-fit: fill;
     }
