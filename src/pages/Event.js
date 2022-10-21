@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
 import { createClient } from "../functions/client";
@@ -9,6 +10,31 @@ import { getEvent } from "../functions/event";
 import ClientCreateForm from "../components/forms/ClientCreateForm";
 import Layout from "../components/layout/layout";
 import GoBackButton from "../components/nav/GoBackButton";
+import imageGory from "../assets/Images/gory-event.png";
+import imageSplywy from "../assets/Images/splywy-event.png";
+import imageMorze from "../assets/Images/morze-event.png";
+import CalendarIcon from "../assets/SVG/Calendar/Calendar";
+import KayakIcon from "../assets/SVG/Kayaks/Kayaks";
+import CrabIcon from "../assets/SVG/Crab/Crab";
+import MountainIcon from "../assets/SVG/Mountain/Mountain";
+
+const typesEvents = [
+  {
+    typeEvent: "gory",
+    image: imageGory,
+    icon: <MountainIcon />,
+  },
+  {
+    typeEvent: "splywy",
+    image: imageSplywy,
+    icon: <KayakIcon />,
+  },
+  {
+    typeEvent: "morze",
+    image: imageMorze,
+    icon: <CrabIcon />,
+  },
+];
 
 const initialState = {
   name: "",
@@ -32,13 +58,11 @@ const Event = () => {
   // destructure
   const { _id, name, description, price, typeEvent, startDate, endDate } =
     event;
-  console.log(eventType);
 
   let { theme } = useSelector((state) => ({ ...state }));
 
   useEffect(() => {
     loadEvent();
-    console.log("EVENT ----", event);
   }, []);
 
   const loadEvent = () => {
@@ -47,7 +71,6 @@ const Event = () => {
       .then((res) => {
         setEvent(res.data);
         setLoading(false);
-        console.log(res.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -83,7 +106,6 @@ const Event = () => {
 
     createClient(createClientData)
       .then((res) => {
-        console.log(res);
         createClientEmail(createEmailData);
         createAuthorEmail(createEmailData);
         toast.success(`Dodano ${res.data.name}`);
@@ -101,23 +123,68 @@ const Event = () => {
     // console.log(e.target.name, " ----- ", e.target.value);
   };
 
+  const showEventImage = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (typeEvent === arr[i].typeEvent)
+        return <motion.img src={arr[i].image} alt={arr[i].image} />;
+    }
+  };
+
+  const showIcon = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (typeEvent === arr[i].typeEvent) return arr[i].icon;
+    }
+  };
+
+  const replaceChar = (date) => {
+    let d = date && date.replaceAll("-", " ");
+    return d;
+  };
+
   return (
     <Layout>
-      <section id="event" className="event container">
-        <div className="event-hero">
+      <section id="event">
+        <div className="event container">
           <GoBackButton />
-
-          <h3>{name}</h3>
-          {/* <h3>{description}</h3> */}
-          <h3>Cena:{price}</h3>
-          <h3>Wyjazd:{startDate}</h3>
-          <h3>Przyjazd:{endDate}</h3>
-          <ClientCreateForm
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            values={values}
-            setValues={setValues}
-          />
+          <div className="event__form">
+            <div className="event__title">
+              <h3>{name}</h3>
+            </div>
+            <div className="event__form-inner">
+              <div className="event__form-header">
+                <div className="event__calendar">
+                  <CalendarIcon colorArrow="green" />
+                  <div className="event__calendar-dates">
+                    <span>Zaczynamy</span>
+                    <span>{replaceChar(startDate)}</span>
+                  </div>
+                </div>
+                <div className="event__calendar">
+                  <CalendarIcon colorArrow="red" rotate />
+                  <div className="event__calendar-dates">
+                    <span>Kończymy</span>
+                    <span>{replaceChar(endDate)}</span>
+                  </div>
+                </div>
+              </div>
+              {/* <h3>{description}</h3> */}
+              <div className="event__form-client">
+                <ClientCreateForm
+                  handleSubmit={handleSubmit}
+                  handleChange={handleChange}
+                  values={values}
+                  setValues={setValues}
+                />
+                <div className="event__price">
+                  <h3>Cena: {price} zł</h3>
+                  <motion.div className="event__icon">
+                    {showIcon(typesEvents)}
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="event__banner">{showEventImage(typesEvents)}</div>
         </div>
       </section>
     </Layout>

@@ -64,7 +64,7 @@ const Accordion = ({ details, expanded, setExpanded, children }) => {
               className="accordion__icon"
             >
               <CalendarIcon colorArrow="green" />
-              <div class="accordion__date">
+              <div className="accordion__date">
                 <h4>Zaczynamy:</h4>
                 <h4>{startDate}</h4>
               </div>

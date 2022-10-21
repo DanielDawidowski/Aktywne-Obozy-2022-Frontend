@@ -6,50 +6,50 @@ const ClientCreateForm = ({ handleSubmit, handleChange, values }) => {
   const { name, email, phone, age } = values;
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
+      <div className="">
         <input
           type="text"
           name="name"
           value={name}
           onChange={handleChange}
-          className="form-control"
+          className=""
           placeholder="Imię i Nazwisko"
         />
       </div>
 
-      <div className="form-group">
+      <div className="">
         <input
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
-          className="form-control"
+          className=""
           placeholder="Email"
         />
       </div>
 
-      <div className="form-group">
+      <div className="">
         <input
           type="phone"
           name="phone"
           value={phone}
           onChange={handleChange}
-          className="form-control"
+          className=""
           placeholder="Telefon"
         />
       </div>
 
-      <div className="form-group">
+      <div className="">
         <input
           type="number"
           name="age"
           value={age}
           onChange={handleChange}
-          className="form-control"
+          className=""
           placeholder="Wiek"
         />
       </div>
-      <button>Wyślij</button>
+      <button className="event-btn">Wyślij</button>
     </form>
   );
 };

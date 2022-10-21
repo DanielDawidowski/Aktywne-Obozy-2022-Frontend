@@ -99,7 +99,10 @@ const Events = () => {
               opacity: 1,
               x: 0,
               y: 0,
-              transition: { ease: "easeInOut", duration: 1.6 },
+              transition: {
+                type: "spring",
+                stiffness: 300,
+              },
             }}
             exit={{ opacity: 0 }}
           >

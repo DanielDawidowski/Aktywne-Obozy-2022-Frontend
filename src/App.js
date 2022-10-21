@@ -7,6 +7,7 @@ import { auth } from "./firebase";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Home from "./pages/Home";
+import Test from "./pages/test";
 import Events from "./pages/Events";
 import Event from "./pages/Event";
 import Contact from "./pages/Contact";
@@ -75,6 +76,7 @@ const App = () => {
       <AnimatePresence exitBeforeEnter>
         <Switch key={location.pathname} location={location}>
           <Route exact path="/" component={Home} />
+          <Route exact path="/test" component={Test} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
