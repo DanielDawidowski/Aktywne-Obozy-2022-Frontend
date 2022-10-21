@@ -2,17 +2,25 @@
   height: 100%;
   width: 100%;
   display: flex;
+  @media (max-width: $layout-breakpoint-small) {
+    display: grid;
+  }
   &__title {
     font-size: $size4;
     padding-bottom: $size2;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__form {
     background: $green;
     padding: $size4 $size5 $size5 $size2;
     margin: $size4;
     border-radius: $borderRadius;
+    @media (max-width: $layout-breakpoint-small) {
+      margin: $size2 0;
+      padding: $size1;
+    }
     &-inner {
       background: $white;
       border-radius: $borderRadius;
@@ -25,10 +33,17 @@
         display: flex;
         &:nth-child(2) {
           margin-left: $size3;
+          @media (max-width: $layout-breakpoint-small) {
+            margin-left: $size1;
+          }
         }
         svg {
           width: 50px;
           height: 50px;
+          @media (max-width: $layout-breakpoint-small) {
+            width: 35px;
+            height: 35px;
+          }
         }
         &-dates {
           display: flex;
@@ -39,6 +54,11 @@
           }
           span:nth-child(2) {
             margin-top: $size1;
+            font-size: 14px;
+            @media (max-width: $layout-breakpoint-small) {
+              margin-top: 4px;
+              font-size: 12px;
+            }
           }
         }
       }
@@ -52,18 +72,6 @@
         margin: 8px 0;
         background: $lightRed;
       }
-      input[name="name"] {
-        width:100%;
-      }
-      input[name="email"] {
-        width:75%;
-      } 
-      input[name="phone"] {
-        width:50%;
-      }
-      input[name="age"] {
-        width:25%;
-      }
       .event-btn {
         background: $orange;
         padding: 8px $size4;
@@ -71,6 +79,9 @@
         border: 1px solid $orange;
         border-radius: $borderRadius;
         margin-top: $size1;
+        @media (max-width: $layout-breakpoint-small) {
+          padding: 4px $size3;
+        }
       }
       .event__price {
         position: relative;
@@ -84,15 +95,26 @@
           padding: 8px $size2;
           border: 1px solid $orange;
           border-radius: $borderRadius;
+          @media (max-width: $layout-breakpoint-small) {
+            padding: 4px $size3;
+          }
         }
         .event__icon {
           position: absolute;
           bottom: 30px;
           right: -15px;
+          @media (max-width: $layout-breakpoint-small) {
+            bottom: 50px;
+            right: -10px;
+          }
           svg {
             width: 120px;
             height: 120px;
             margin-left: 8px;
+            @media (max-width: $layout-breakpoint-small) {
+              width: 80px;
+              height: 80px;
+            }
           }
         }
       }
@@ -100,6 +122,12 @@
   }
   &__banner {
     margin-top: $size4;
+    padding: $size1;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  
   }
 }
 

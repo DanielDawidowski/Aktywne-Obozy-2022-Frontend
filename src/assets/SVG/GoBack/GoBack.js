@@ -9,7 +9,7 @@ const GoBackIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="left-arrow 1" clip-path="url(#clip0_998_8)">
+      <g id="left-arrow 1" clipPath="url(#clip0_998_8)">
         <g id="Group">
           <path
             id="arrow"

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
 import { createClient } from "../functions/client";
@@ -123,12 +123,12 @@ const Event = () => {
     // console.log(e.target.name, " ----- ", e.target.value);
   };
 
-  const showEventImage = (arr) => {
+  function showEventImage(arr) {
     for (let i = 0; i < arr.length; i++) {
       if (typeEvent === arr[i].typeEvent)
         return <motion.img src={arr[i].image} alt={arr[i].image} />;
     }
-  };
+  }
 
   const showIcon = (arr) => {
     for (let i = 0; i < arr.length; i++) {
@@ -145,45 +145,92 @@ const Event = () => {
     <Layout>
       <section id="event">
         <div className="event container">
-          <GoBackButton />
-          <div className="event__form">
-            <div className="event__title">
-              <h3>{name}</h3>
-            </div>
-            <div className="event__form-inner">
-              <div className="event__form-header">
-                <div className="event__calendar">
-                  <CalendarIcon colorArrow="green" />
-                  <div className="event__calendar-dates">
-                    <span>Zaczynamy</span>
-                    <span>{replaceChar(startDate)}</span>
+          <GoBackButton mediaQuery />
+          <AnimatePresence>
+            <motion.div
+              className="event__form"
+              initial={{ opacity: 0, height: 40 }}
+              animate={{
+                opacity: 1,
+                height: "100%",
+                transition: { duration: 1.6 },
+              }}
+              exit={{ opacity: 0, height: 10 }}
+            >
+              <div className="event__title">
+                <GoBackButton />
+                <h3>{name}</h3>
+              </div>
+              <motion.div
+                className="event__form-inner"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 3.6 },
+                }}
+                exit={{ opacity: 0 }}
+              >
+                <div className="event__form-header">
+                  <div className="event__calendar">
+                    <CalendarIcon colorArrow="green" />
+                    <div className="event__calendar-dates">
+                      <span>Zaczynamy</span>
+                      <span>{replaceChar(startDate)}</span>
+                    </div>
+                  </div>
+                  <div className="event__calendar">
+                    <CalendarIcon colorArrow="red" rotate />
+                    <div className="event__calendar-dates">
+                      <span>Kończymy</span>
+                      <span>{replaceChar(endDate)}</span>
+                    </div>
                   </div>
                 </div>
-                <div className="event__calendar">
-                  <CalendarIcon colorArrow="red" rotate />
-                  <div className="event__calendar-dates">
-                    <span>Kończymy</span>
-                    <span>{replaceChar(endDate)}</span>
+                {/* <h3>{description}</h3> */}
+                <div className="event__form-client">
+                  <ClientCreateForm
+                    handleSubmit={handleSubmit}
+                    handleChange={handleChange}
+                    values={values}
+                    setValues={setValues}
+                  />
+                  <div className="event__price">
+                    <motion.h3
+                      initial={{ opacity: 0, x: 10 }}
+                      animate={{
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 4.6,
+                          delay: 0.7,
+                        },
+                      }}
+                      exit={{ opacity: 0, x: 10 }}
+                    >
+                      Cena: {price} zł
+                    </motion.h3>
+                    <motion.div
+                      className="event__icon"
+                      initial={{ opacity: 0, x: 10 }}
+                      animate={{
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 4.6,
+                          delay: 0.7,
+                        },
+                      }}
+                      exit={{ opacity: 0, x: 10 }}
+                    >
+                      {showIcon(typesEvents)}
+                    </motion.div>
                   </div>
                 </div>
-              </div>
-              {/* <h3>{description}</h3> */}
-              <div className="event__form-client">
-                <ClientCreateForm
-                  handleSubmit={handleSubmit}
-                  handleChange={handleChange}
-                  values={values}
-                  setValues={setValues}
-                />
-                <div className="event__price">
-                  <h3>Cena: {price} zł</h3>
-                  <motion.div className="event__icon">
-                    {showIcon(typesEvents)}
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
           <div className="event__banner">{showEventImage(typesEvents)}</div>
         </div>
       </section>

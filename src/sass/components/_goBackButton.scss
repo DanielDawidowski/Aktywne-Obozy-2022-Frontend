@@ -1,0 +1,15 @@
+.go-back-btn {
+
+}
+
+.go-back-btn.small{
+  @media (max-width: $layout-breakpoint-small) {
+    display: none;
+  }
+}
+
+.go-back-btn.big{
+  @media (min-width: $layout-breakpoint-small) {
+    display: none;
+  }
+}

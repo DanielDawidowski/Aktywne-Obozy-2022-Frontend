@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import GoBackIcon from "../../assets/SVG/GoBack/GoBack";
 
-const GoBackButton = () => {
+const GoBackButton = ({ mediaQuery = false }) => {
   let history = useHistory();
   return (
     <motion.div
@@ -16,9 +16,11 @@ const GoBackButton = () => {
       exit={{ opacity: 0, x: -20 }}
       style={{
         cursor: "pointer",
-        marginTop: "36px",
+        marginTop: mediaQuery ? "36px" : "0px",
+        marginRight: mediaQuery ? "0px" : "16px",
         height: "100%",
       }}
+      className={mediaQuery ? "go-back-btn small" : "go-back-btn big"}
       onClick={() => history.goBack()}
     >
       <GoBackIcon />
