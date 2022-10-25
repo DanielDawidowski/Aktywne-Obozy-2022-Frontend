@@ -210,17 +210,17 @@ const HomeBannerSVGBig = ({ color = "#ffffff" }) => {
 
           <motion.g
             id="Group 159"
-            initial={{ opacity: 0, x: 0 }}
+            initial={{ opacity: 0, x: -10 }}
             animate={{
               opacity: 1,
-              x: 30,
+              x: 0,
               transition: {
                 ease: "easeInOut",
                 duration: 4.8,
               },
             }}
             exit={{
-              opacity: 0,
+              opacity: -10,
             }}
           >
             <path
