@@ -31,6 +31,15 @@ const Accordion = ({ details, expanded, setExpanded, children }) => {
     }
   };
 
+  const showDate = (date) => {
+    let year = date && date.substring(0, 4);
+    let mounth = date && date.substring(5, 7);
+    let day = date && date.substring(-1, 2);
+    // let d = date && date.replaceAll("-", " ");
+
+    return `${day} ${mounth} ${year}`;
+  };
+
   return (
     <motion.div className="accordion">
       <motion.div
@@ -66,7 +75,7 @@ const Accordion = ({ details, expanded, setExpanded, children }) => {
               <CalendarIcon colorArrow="green" />
               <div className="accordion__date">
                 <h4>Zaczynamy:</h4>
-                <h4>{startDate}</h4>
+                <h4>{showDate(startDate)}</h4>
               </div>
             </motion.div>
           ) : null}

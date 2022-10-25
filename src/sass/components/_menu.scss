@@ -48,17 +48,10 @@
 }
 
 .menu-item-contact {
-    position: relative;
-
-    &::before {
-    position: absolute;
-    content: "";
-    width: 115%;
-    height: 130%;
-    z-index: -1;
-    background: $white;
-    border-radius: $borderRadius;
-   }
+  margin-left: 0;
+  @media (min-width: $layout-breakpoint-small) {
+    margin-left: $size3;
+  }
 }
 
 

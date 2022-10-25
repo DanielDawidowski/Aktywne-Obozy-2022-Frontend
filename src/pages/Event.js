@@ -126,9 +126,40 @@ const Event = () => {
   function showEventImage(arr) {
     for (let i = 0; i < arr.length; i++) {
       if (typeEvent === arr[i].typeEvent)
-        return <motion.img src={arr[i].image} alt={arr[i].image} />;
+        return (
+          <motion.img
+            src={arr[i].image}
+            alt={arr[i].image}
+            initial={{ opacity: 0, x: 20, y: -20 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              y: 0,
+              transition: {
+                type: "tween",
+                duration: 1.6,
+                delay: 0.5,
+              },
+            }}
+            exit={{ opacity: 0, x: -20, y: 20 }}
+          />
+        );
     }
   }
+
+  // function replaceString(oldS, newS, fullS) {
+  //   for (let i = 0; i < fullS.length; ++i) {
+  //     if (fullS.substring(i, i + oldS.length) === oldS) {
+  //       fullS =
+  //         fullS.substring(0, i) +
+  //         newS +
+  //         fullS.substring(i + oldS.length, fullS.length);
+  //     }
+  //   }
+  //   return fullS;
+  // }
+
+  // console.log(replaceString("World", "Web", "Brave New World"));
 
   const showIcon = (arr) => {
     for (let i = 0; i < arr.length; i++) {
@@ -136,9 +167,13 @@ const Event = () => {
     }
   };
 
-  const replaceChar = (date) => {
-    let d = date && date.replaceAll("-", " ");
-    return d;
+  const showDate = (date) => {
+    let year = date && date.substring(0, 4);
+    let mounth = date && date.substring(5, 7);
+    let day = date && date.substring(-1, 2);
+    // let d = date && date.replaceAll("-", " ");
+
+    return `${day} ${mounth} ${year}`;
   };
 
   return (
@@ -155,11 +190,11 @@ const Event = () => {
                 height: "100%",
                 transition: { duration: 1.6 },
               }}
-              exit={{ opacity: 0, height: 10 }}
+              exit={{ opacity: 0, height: -40 }}
             >
               <div className="event__title">
                 <GoBackButton />
-                <h3>{name}</h3>
+                <h3 style={{ color: !theme ? "#24242a" : "#fff" }}>{name}</h3>
               </div>
               <motion.div
                 className="event__form-inner"
@@ -175,14 +210,14 @@ const Event = () => {
                     <CalendarIcon colorArrow="green" />
                     <div className="event__calendar-dates">
                       <span>Zaczynamy</span>
-                      <span>{replaceChar(startDate)}</span>
+                      <span>{showDate(startDate)}</span>
                     </div>
                   </div>
                   <div className="event__calendar">
                     <CalendarIcon colorArrow="red" rotate />
                     <div className="event__calendar-dates">
                       <span>Kończymy</span>
-                      <span>{replaceChar(endDate)}</span>
+                      <span>{showDate(endDate)}</span>
                     </div>
                   </div>
                 </div>
@@ -203,7 +238,7 @@ const Event = () => {
                         transition: {
                           ease: "easeInOut",
                           duration: 4.6,
-                          delay: 0.7,
+                          delay: 0.6,
                         },
                       }}
                       exit={{ opacity: 0, x: 10 }}
@@ -218,7 +253,7 @@ const Event = () => {
                         x: 0,
                         transition: {
                           ease: "easeInOut",
-                          duration: 4.6,
+                          duration: 2.6,
                           delay: 0.7,
                         },
                       }}

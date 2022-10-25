@@ -47,3 +47,20 @@ const useFollowPointer = (ref) => {
 
   return point;
 };
+
+//////
+
+// import React from "react";
+// import { motion } from "framer-motion";
+// function onUpdate(latest) {
+//   console.log(latest.x, latest.opacity);
+// }
+// export default function App() {
+//   return (
+//     <motion.div
+//       onUpdate={onUpdate}
+//       animate={{ x: 100, opacity: 0 }}
+//       style={{ backgroundColor: "red", width: 100, height: 100 }}
+//     ></motion.div>
+//   );
+// }

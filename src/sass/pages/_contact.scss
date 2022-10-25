@@ -1,0 +1,25 @@
+.contact {
+  height: 100%;
+  display: grid;
+  margin: $size4 0;
+
+  textarea,
+  input {
+    border: 1px solid $turquoise;
+    border-radius: $borderRadius;
+    padding: 8px 0 8px $size1;
+    margin: 8px 0;
+    padding: 8px $size1;
+  }
+  button {
+    background: $turquoise;
+    padding: 8px $size4;
+    color: $white;
+    border: 1px solid $turquoise;
+    border-radius: $borderRadius;
+    margin-top: $size1;
+    @media (max-width: $layout-breakpoint-small) {
+      padding: 4px $size3;
+    }
+  }
+}

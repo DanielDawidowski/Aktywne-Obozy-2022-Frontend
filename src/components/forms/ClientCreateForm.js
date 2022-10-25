@@ -18,7 +18,11 @@ const ClientCreateForm = ({ handleSubmit, handleChange, values }) => {
           animate={{
             opacity: 1,
             width: "100%",
-            transition: { ease: "easeInOut", duration: 3.6, delay: 0.5 },
+            transition: {
+              ease: "easeInOut",
+              duration: 1.6,
+              delay: 0.2,
+            },
           }}
           exit={{ opacity: 0, width: 10 }}
         />
@@ -36,7 +40,7 @@ const ClientCreateForm = ({ handleSubmit, handleChange, values }) => {
           animate={{
             opacity: 1,
             width: "75%",
-            transition: { ease: "easeInOut", duration: 3.6, delay: 0.5 },
+            transition: { ease: "easeInOut", duration: 1.6, delay: 0.3 },
           }}
           exit={{ opacity: 0, width: 10 }}
         />
@@ -54,7 +58,7 @@ const ClientCreateForm = ({ handleSubmit, handleChange, values }) => {
           animate={{
             opacity: 1,
             width: "50%",
-            transition: { ease: "easeInOut", duration: 3.6, delay: 0.5 },
+            transition: { ease: "easeInOut", duration: 1.6, delay: 0.4 },
           }}
           exit={{ opacity: 0, width: 10 }}
         />
@@ -72,7 +76,7 @@ const ClientCreateForm = ({ handleSubmit, handleChange, values }) => {
           animate={{
             opacity: 1,
             width: "25%",
-            transition: { ease: "easeInOut", duration: 3.6, delay: 0.5 },
+            transition: { ease: "easeInOut", duration: 1.6, delay: 0.5 },
           }}
           exit={{ opacity: 0, width: 10 }}
         />

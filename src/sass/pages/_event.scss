@@ -65,12 +65,25 @@
     } 
     &-client {
       margin-top: $size3;
+      width: 100%;
       input {
         border: 1px solid $lightRed;
         border-radius: $borderRadius;
         padding: 8px 0 8px $size1;
         margin: 8px 0;
         background: $lightRed;
+      }
+      input[name="name"] {
+        width: 100%;
+      }
+      input[name="email"] {
+        width: 75%;
+      }
+      input[name="phone"] {
+        width: 50%;
+      }
+      input[name="age"] {
+        width: 25%;
       }
       .event-btn {
         background: $orange;
@@ -123,6 +136,7 @@
   &__banner {
     margin-top: $size4;
     padding: $size1;
+    width: 100%;
     img {
       object-fit: cover;
       width: 100%;

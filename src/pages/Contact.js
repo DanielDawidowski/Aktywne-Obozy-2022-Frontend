@@ -48,14 +48,19 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section id="contact" className="contact container">
-        <div className="contact-hero">
-          <MessageForm
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            values={values}
-            setValues={setValues}
-          />
+      <section id="contact" className="container">
+        <div className="contact">
+          <div className="contact-hero">
+            <div className="contact-question">
+              <h3>Chcesz zadać nam pytanie?</h3>
+            </div>
+            <MessageForm
+              handleSubmit={handleSubmit}
+              handleChange={handleChange}
+              values={values}
+              setValues={setValues}
+            />
+          </div>
         </div>
       </section>
     </Layout>

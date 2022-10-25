@@ -62,7 +62,7 @@ const Events = () => {
   const showImageRight = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       if (typeEvent === arr[i].typeEvent) {
-        return <motion.img src={arr[i].imageRight} />;
+        return <motion.img src={arr[i].imageRight} alt={arr[i].imageRight} />;
       }
     }
   };
@@ -100,11 +100,15 @@ const Events = () => {
               x: 0,
               y: 0,
               transition: {
-                type: "spring",
-                stiffness: 300,
+                type: "tween",
+                duration: 1.6,
+                delay: 0.5,
+                opacity: {
+                  duration: 3,
+                },
               },
             }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, x: -20, y: -20 }}
           >
             {showImageLeft(typesEvents)}
           </motion.div>
