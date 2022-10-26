@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 import { createMessage } from "../functions/email";
 
 import MessageForm from "../components/forms/MessageCreateForm";
 import Layout from "../components/layout/layout";
+import imageRight from "../assets/Images/contact.png";
 
 const initialState = {
   name: "",
@@ -50,7 +52,7 @@ const Contact = () => {
     <Layout>
       <section id="contact" className="container">
         <div className="contact">
-          <div className="contact-hero">
+          <div className="contact-left">
             <div className="contact-question">
               <h3>Chcesz zadać nam pytanie?</h3>
             </div>
@@ -60,6 +62,9 @@ const Contact = () => {
               values={values}
               setValues={setValues}
             />
+          </div>
+          <div className="contact-right">
+            <motion.img src={imageRight} alt={imageRight} />
           </div>
         </div>
       </section>

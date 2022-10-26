@@ -155,16 +155,16 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
           </motion.li>
         </>
       )}
-      <motion.li
+      {/* <motion.li
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
         variants={item}
       >
-        {/* <Link to={"/event/kajaki"}> */}
+        <Link to={"/event/kajaki"}>
         <Link style={{ textDecoration: "none" }} to="/events/splywy">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Spływy</h2>
         </Link>
-      </motion.li>
+      </motion.li> */}
       <motion.li
         className="menu-item"
         onClick={grid ? () => setToggleMenu(!toggleMenu) : null}

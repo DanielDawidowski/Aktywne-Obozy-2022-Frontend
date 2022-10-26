@@ -9,7 +9,7 @@ import Accordion from "../components/accordion/accordion";
 import imageGoryLeft from "../assets/Images/holly-mandarich.png";
 import imageSplywyLeft from "../assets/Images/tim-foster.png";
 import imageMorzeLeft from "../assets/Images/hermansyah.png";
-import imageGoryRight from "../assets/Images/gory.png";
+import imageGoryRight from "../assets/Images/ski.png";
 import imageSplywyRight from "../assets/Images/splywy.png";
 import imageMorzeRight from "../assets/Images/morze.png";
 
