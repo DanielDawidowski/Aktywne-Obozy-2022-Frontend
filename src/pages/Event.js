@@ -13,10 +13,12 @@ import GoBackButton from "../components/nav/GoBackButton";
 import imageGory from "../assets/Images/gory-event.png";
 import imageSplywy from "../assets/Images/splywy-event.png";
 import imageMorze from "../assets/Images/morze-event.png";
+import image1 from "../assets/Images/ski.png";
 import CalendarIcon from "../assets/SVG/Calendar/Calendar";
 import KayakIcon from "../assets/SVG/Kayaks/Kayaks";
 import CrabIcon from "../assets/SVG/Crab/Crab";
 import MountainIcon from "../assets/SVG/Mountain/Mountain";
+import Modal from "../components/modal/modal";
 
 const typesEvents = [
   {
@@ -47,6 +49,7 @@ const Event = () => {
   const [values, setValues] = useState(initialState);
   const [event, setEvent] = useState({});
   const [loading, setLoading] = useState(false);
+  const [isToggled, setToggle] = useState(false);
 
   let location = useLocation();
 
@@ -269,6 +272,15 @@ const Event = () => {
           <div className="event__banner">{showEventImage(typesEvents)}</div>
         </div>
       </section>
+      <section id="event-info" className="event-info container">
+        <h1>Info section!</h1>
+        <button onClick={() => setToggle(true)}>Toggle</button>
+      </section>
+      <Modal isToggled={isToggled} setToggle={setToggle}>
+        <div className="event-info__modal">
+          <h1>yo madafakas</h1>
+        </div>
+      </Modal>
     </Layout>
   );
 };

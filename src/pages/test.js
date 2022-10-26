@@ -1,26 +1,36 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Layout from "../components/layout/layout";
+import Logo from "../assets/SVG/Logo/Logo";
 
 const Test = () => {
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref);
   return (
-    <Layout>
-      <div className="test">
-        <motion.div
-          ref={ref}
-          className="box"
-          animate={{ x, y }}
-          transition={{
-            type: "spring",
-            damping: 3,
-            stiffness: 50,
-            restDelta: 0.001,
-          }}
+    // <Layout>
+    <div className="test container">
+      <div className="test-info">
+        <Logo
+          mainColor={"#24242a"}
+          wheelColor={"#24242a"}
+          animate
+          style={{ margin: "10px" }}
         />
+        <h1>Wracamy wkrótce :D</h1>
       </div>
-    </Layout>
+      <motion.div
+        ref={ref}
+        className="box"
+        animate={{ x, y }}
+        transition={{
+          type: "spring",
+          damping: 3,
+          stiffness: 50,
+          restDelta: 0.001,
+        }}
+      />
+    </div>
+    // </Layout>
   );
 };
 

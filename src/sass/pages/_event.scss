@@ -145,6 +145,33 @@
   }
 }
 
+.event-info {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  background: $red;
+  &__modal {
+    display: grid;
+    place-content: center;
+    background: $red;
+    height: 50vh;
+    width: 100%;
+    z-index: 11;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .test{
   overflow: hidden;

@@ -6,8 +6,10 @@
   // align-items: center;
   @media (max-width: $layout-breakpoint-small) {
     display: grid;
+    // grid-template-areas: "a c b";
   }
   &__image {
+    // grid-area: a;
     margin-top: $size4;
     @media (max-width: $layout-breakpoint-small) {
       display: none;
@@ -15,6 +17,7 @@
   }
   
   &__list {
+    // grid-area: b;
     height: 100%;
     margin: $size4 0 $size5 $size4;
     @media (max-width: $layout-breakpoint-small) {
@@ -67,19 +70,18 @@
     }
   }
   &__right {
+    // grid-area: c;
     margin: $size4 0 0 $size5;
     height: 100%;
     max-width: 100%;
     border-radius: $borderRadius;
     img {
+      width: 100%;
       object-fit: cover;
     }
 
     @media (max-width: $layout-breakpoint-small) {
       margin: $size1;
-      img {
-        width: 90%;
-      }
     }
 
     @media (min-width: $layout-breakpoint-small) and (max-width: $layout-breakpoint-medium){
