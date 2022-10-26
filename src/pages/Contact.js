@@ -32,7 +32,7 @@ const Contact = () => {
 
     createMessage(createEmailData)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         toast.success(`Dodano ${res.data.name}`);
         setValues({ name: "", email: "", message: "" });
       })

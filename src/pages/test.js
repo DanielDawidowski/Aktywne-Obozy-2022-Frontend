@@ -16,7 +16,7 @@ const Test = () => {
           animate
           style={{ margin: "10px" }}
         />
-        <h1>Wracamy wkrótce :D</h1>
+        <h1>Wracamy wkrótce :-D</h1>
       </div>
       <motion.div
         ref={ref}

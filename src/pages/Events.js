@@ -77,9 +77,9 @@ const Events = () => {
   const loadAllEvents = () => {
     setLoading(true);
     getEventsByCount(100)
-      .then((res) => {
-        console.log(res.data);
-        setEvents(res.data);
+      .then((data) => {
+        // console.log(res.data);
+        setEvents(data);
         setLoading(false);
       })
       .catch((err) => {
