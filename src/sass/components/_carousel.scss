@@ -1,0 +1,31 @@
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+  width: 100%;
+  &__inner {
+    display: grid;
+    height: 100%;
+
+    @media (min-width: $layout-breakpoint-small) {
+      height: 250px;
+      padding: 0 $size3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &.small {
+      display: none;
+      @media (max-width: $layout-breakpoint-small) {
+        display: grid;
+      }
+    }
+    &.big {
+      display: none;
+      @media (min-width: $layout-breakpoint-small) {
+        display: flex;
+        width: 100%;
+
+      }
+    }
+  }
+}

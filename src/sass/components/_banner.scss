@@ -1,0 +1,47 @@
+.banner {
+  z-index: 100;
+  position: absolute;
+  top: 25%;
+  left: -7%;
+  @media (max-width: $layout-breakpoint-small) {
+    top: 35%;
+    left: -25%;
+  }
+
+  .banner-row {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+
+    .row-title,
+    .row-letter {
+      font-size: $size5;
+      font-weight: 500;
+      position: relative;
+      letter-spacing: 0.2rem;
+      display: inline-block;
+      white-space: nowrap;
+      text-transform: uppercase;
+
+      @media (max-width: $layout-breakpoint-small) {
+        font-size: $size4;
+      }
+
+    
+    }
+    
+    
+  }
+  .title-red {
+    margin: 20px 0 0 5px;
+    color: $red;
+    .row-title,
+    .row-letter {
+      text-transform: capitalize;
+      font-size: $size1;
+
+    }
+  }
+}
+

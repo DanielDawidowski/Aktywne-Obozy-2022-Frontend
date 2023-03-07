@@ -1,0 +1,68 @@
+.event-assured {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  padding: $size1;
+  &__title {
+    display: grid;
+    place-content: center;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: $green;
+    margin: $size3 0;
+    padding: $size3 $size5;
+    border: 1px solid $green;
+    border-radius: $borderRadius;
+    @media (max-width: $layout-breakpoint-small) {
+      padding: $size1;
+    }
+  }
+  &__item {
+    margin: $size1 0;
+    padding: $size1;
+    border-radius: $borderRadius;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 100px;
+        height: 100px;
+        margin-right: $size1;
+        @media (max-width: $layout-breakpoint-small) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      h4 {
+        font-size: $size2;
+        text-align: left;
+        max-width: 300px;
+        @media (max-width: $layout-breakpoint-small) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &__modal {
+    display: grid;
+    place-content: center;
+    background: $red;
+    height: 50vh;
+    width: 100%;
+    z-index: 11;
+  }
+}
+
+section[id=".event-assured"] {
+  margin-top: $size5;
+}

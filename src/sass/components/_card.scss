@@ -1,0 +1,46 @@
+.card {
+  padding: $size1;
+  background: $white;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  border-radius: $borderRadius;
+  width: 100%;
+
+  &:nth-child(2){
+    margin: $size1 0;
+     @media (min-width: $layout-breakpoint-small) {
+      margin:0 $size1;
+    }
+  }
+  
+  svg {
+    width: 70px;
+    height: 70px;
+    padding: 0;
+  }
+
+  &__content {
+    display: grid;
+    place-items: center;
+    margin-left: 4px;
+    h4 {
+      color: $green;
+      font-size: $size4;
+      @media (min-width: $layout-breakpoint-small) {
+        font-size: $size2;
+      }
+      @media (min-width: $layout-breakpoint-xsmall) and (max-width: $layout-breakpoint-small){
+        font-size: $size1;
+      }
+    }
+    h5 {
+      font-size: $size2;
+      padding: $size1;
+      @media (min-width: $layout-breakpoint-small) {
+        font-size: $size1;
+      }
+    }
+  }
+
+}

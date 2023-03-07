@@ -1,0 +1,11 @@
+.blackdrop {
+  position: fixed;
+  top: 0;
+  background: $black;
+  height: 100%;
+  width: 100vw;
+  z-index: 10;
+}
+.modal {
+  z-index: 11;
+}

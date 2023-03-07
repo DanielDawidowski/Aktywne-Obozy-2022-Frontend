@@ -1,0 +1,25 @@
+.logo {
+  @media (max-width: $layout-breakpoint-xsmall) {
+    width: 110px;
+  }
+  .logo__wheel {
+    animation-duration: 1.8s;
+    animation-iteration-count: 2, 0;
+    animation-timing-function: linear;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-iteration-count: linear;
+  }
+  .rotate {
+    animation-name: rotateLogo;
+  }
+}
+
+@keyframes rotateLogo {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

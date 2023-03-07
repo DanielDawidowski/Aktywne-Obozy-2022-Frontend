@@ -1,0 +1,174 @@
+.event {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  @media (max-width: $layout-breakpoint-small) {
+    display: grid;
+  }
+  &__title {
+    font-size: $size4;
+    padding-bottom: $size2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__form {
+    background: $turquoise;
+    padding: $size4 $size5 $size5 $size2;
+    margin: $size4;
+    border-radius: $borderRadius;
+    @media (max-width: $layout-breakpoint-small) {
+      margin: $size2 0;
+      padding: $size1;
+    }
+    &-inner {
+      background: $white;
+      border-radius: $borderRadius;
+      padding: $size2 $size4 $size5 $size2;
+    }
+    &-header {
+      width: 100%;
+      display: flex;
+      .event__calendar {
+        display: flex;
+        &:nth-child(2) {
+          margin-left: $size3;
+          @media (max-width: $layout-breakpoint-small) {
+            margin-left: $size1;
+          }
+        }
+        svg {
+          width: 50px;
+          height: 50px;
+          @media (max-width: $layout-breakpoint-small) {
+            width: 35px;
+            height: 35px;
+          }
+        }
+        &-dates {
+          display: flex;
+          flex-direction: column;
+          margin-left: 8px;
+          span:nth-child(1) {
+            color: $green;
+          }
+          span:nth-child(2) {
+            margin-top: $size1;
+            font-size: 12px;
+            @media (max-width: $layout-breakpoint-small) {
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    } 
+    &-client {
+      margin-top: $size3;
+      width: 100%;
+      input {
+        border: 1px solid $lightRed;
+        border-radius: $borderRadius;
+        padding: 8px 0 8px $size1;
+        margin: 8px 0;
+        background: $lightRed;
+      }
+      input[name="name"] {
+        width: 100%;
+      }
+      input[name="email"] {
+        width: 75%;
+      }
+      input[name="phone"] {
+        width: 50%;
+      }
+      input[name="age"] {
+        width: 25%;
+      }
+      .event-btn {
+        background: $orange;
+        padding: 8px $size4;
+        color: $white;
+        border: 1px solid $orange;
+        border-radius: $borderRadius;
+        margin-top: $size1;
+        font-size: $size1;
+
+        @media (max-width: $layout-breakpoint-small) {
+          padding: 4px $size3;
+          font-size: 12px;
+        }
+      }
+      .event__price {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        h3 {
+          position: absolute;
+          bottom: 0;
+          right: -$size1;
+          background: $yellow;
+          padding: 8px $size2;
+          border: 1px solid $orange;
+          border-radius: $borderRadius;
+          font-size: $size1;
+          @media (max-width: $layout-breakpoint-small) {
+            padding: 4px $size3;
+            font-size: 12px;
+          }
+        }
+        .event__icon {
+          position: absolute;
+          bottom: 30px;
+          right: -15px;
+          @media (max-width: $layout-breakpoint-small) {
+            bottom: 50px;
+            right: -10px;
+          }
+          svg {
+            width: 120px;
+            height: 120px;
+            margin-left: 8px;
+            @media (max-width: $layout-breakpoint-small) {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
+      }
+    }  
+  }
+  &__banner {
+    margin-top: $size4;
+    padding: $size1;
+    width: 100%;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.test{
+  overflow: hidden;
+  height: 90vh;
+}
+.box {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: $red;
+}

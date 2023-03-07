@@ -1,0 +1,26 @@
+.home {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  place-items: center;
+    
+  &-hero {
+    position: relative;
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+  }
+}
+
+section[id="home"] {
+  margin-bottom: $size5;
+  margin-top: $size5;
+  @media (max-width: $layout-breakpoint-small) {
+    margin-top: $size1;
+  }
+
+}

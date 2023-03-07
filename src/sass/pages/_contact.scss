@@ -1,0 +1,52 @@
+.contact {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  margin: $size4 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: $size1;
+  @media (max-width: $layout-breakpoint-small) {
+    display: grid;
+    height: 100%;
+  }
+  .contact-left {
+    width: 100%;
+    .contact-question {
+      margin:0 0 $size1 $size1;
+      h3 {
+        font-size: $size3;
+        @media (max-width: $layout-breakpoint-small) {
+          font-size: $size1;
+        }
+      }
+    }
+    textarea,
+    input {
+      border: 1px solid $turquoise;
+      border-radius: $borderRadius;
+      padding: 8px 0 8px $size1;
+      margin: 8px 0;
+      padding: 8px $size1;
+    }
+    button {
+      background: $turquoise;
+      padding: 8px $size4;
+      color: $white;
+      border: 1px solid $turquoise;
+      border-radius: $borderRadius;
+      margin-top: $size1;
+      @media (max-width: $layout-breakpoint-small) {
+        padding: 4px $size3;
+      }
+    }
+  }
+  .contact-right {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    img {
+      width: 100%;
+    }
+  }
+}

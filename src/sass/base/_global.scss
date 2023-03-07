@@ -1,0 +1,25 @@
+body {
+  background: $white;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  @media (min-width: $layout-breakpoint-medium) {
+    max-width: 1200px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.white-content {
+  background: $black;
+  color: $white;
+}
+
