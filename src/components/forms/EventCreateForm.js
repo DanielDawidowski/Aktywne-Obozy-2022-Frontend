@@ -12,7 +12,7 @@ const EventCreateForm = ({
     name,
     description,
     price,
-    amount,
+    priceNoDiscount,
     // categories,
     typeEvent,
     startDate,
@@ -58,12 +58,12 @@ const EventCreateForm = ({
       </div>
 
       <div className="form-group">
-        <label>Ilość osób</label>
+        <label>Cena bez dofinansowania z KRUS </label>
         <input
           type="number"
-          name="amount"
+          name="priceNoDiscount"
           className="form-control"
-          defaultValue={amount}
+          defaultValue={priceNoDiscount}
           onChange={handleChange}
         />
       </div>
@@ -116,6 +116,7 @@ const EventCreateForm = ({
           <option value="gory">Góry</option>
           <option value="splywy">Spływy</option>
           <option value="morze">Morze</option>
+          <option value="polkolonie">Półkolonie</option>
         </select>
       </div>
 

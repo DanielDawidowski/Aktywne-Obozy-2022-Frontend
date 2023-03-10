@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import PoepleIcon from "../../assets/SVG/Icons-Assured/People";
 import BagIcon from "../../assets/SVG/Icons-Special/Bag";
-import CinemaIcon from "../../assets/SVG/Icons-Special/cinema";
-import SwimIcon from "../../assets/SVG/Icons-Special/swim";
 import Clock8Icon from "../../assets/SVG/Icons-Special/clock8";
 import Clock9Icon from "../../assets/SVG/Icons-Special/clock9";
 import Clock10Icon from "../../assets/SVG/Icons-Special/clock10";
 import Clock15Icon from "../../assets/SVG/Icons-Special/clock15";
+import SafariIcon from "../../assets/SVG/Icons-Special/safari";
+import CinemaIcon from "../../assets/SVG/Icons-Special/cinema";
+import SwimIcon from "../../assets/SVG/Icons-Special/swim";
 import IceSkateIcon from "../../assets/SVG/Icons-Special/clock15";
 import LaserIcon from "../../assets/SVG/Icons-Special/laser";
 import McIcon from "../../assets/SVG/Icons-Special/mcdonald";
-import SafariIcon from "../../assets/SVG/Icons-Special/safari";
 import TrampolineIcon from "../../assets/SVG/Icons-Special/trampoline";
 
 const EventSpecialInfo = () => {
@@ -89,15 +89,6 @@ const EventSpecialInfo = () => {
           <span>
             <LaserIcon />
             <h4>Laser Tag</h4>
-          </span>
-        </div>
-        <div
-          className="event-assured__item"
-          style={{ background: theme ? "#24242a" : "#fff" }}
-        >
-          <span>
-            <SafariIcon />
-            <h4>wyciaczka do Okrągłe: safari zoo + snowtubing</h4>
           </span>
         </div>
       </div>

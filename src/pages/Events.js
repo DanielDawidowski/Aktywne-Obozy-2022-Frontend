@@ -9,9 +9,10 @@ import Footer from "../components/footer/footer";
 import imageGoryLeft from "../assets/Images/holly-mandarich.png";
 import imageSplywyLeft from "../assets/Images/tim-foster.png";
 import imageMorzeLeft from "../assets/Images/hermansyah.png";
-import imageGoryRight from "../assets/Images/ski.png";
+import imageGoryRight from "../assets/Images/tatry.jpg";
 import imageSplywyRight from "../assets/Images/splywy.png";
-import imageMorzeRight from "../assets/Images/morze.png";
+import imagePolkolonieRight from "../assets/Images/kolonie.jpg";
+import imageMorzeRight from "../assets/Images/morze.jpg";
 
 const typesEvents = [
   {
@@ -25,6 +26,12 @@ const typesEvents = [
     title: "Spływy",
     imageleft: imageSplywyLeft,
     imageRight: imageSplywyRight,
+  },
+  {
+    typeEvent: "polkolonie",
+    title: "Półkolonie",
+    imageleft: imageSplywyLeft,
+    imageRight: imagePolkolonieRight,
   },
   {
     typeEvent: "morze",
@@ -64,7 +71,13 @@ const Events = () => {
   const showImageRight = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       if (typeEvent === arr[i].typeEvent) {
-        return <motion.img src={arr[i].imageRight} alt={arr[i].imageRight} />;
+        return (
+          <motion.img
+            src={arr[i].imageRight}
+            alt={arr[i].imageRight}
+            style={{ borderRadius: "13px" }}
+          />
+        );
       }
     }
   };

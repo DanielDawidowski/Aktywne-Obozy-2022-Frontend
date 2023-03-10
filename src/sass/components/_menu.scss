@@ -12,6 +12,10 @@
     display: grid;
     place-items: center;
     width: 115px;
+    margin-right: 2%;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 

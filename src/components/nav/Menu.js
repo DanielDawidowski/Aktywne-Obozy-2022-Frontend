@@ -161,8 +161,18 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
         variants={item}
       >
         {/* <Link to={"/event/kajaki"}> */}
-        <Link style={{ textDecoration: "none" }} to="/event/gory/polkolonie">
+        <Link style={{ textDecoration: "none" }} to="/events/polkolonie">
           <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Półkolonie</h2>
+        </Link>
+      </motion.li>
+      <motion.li
+        className="menu-item"
+        onClick={grid ? () => setToggleMenu(!toggleMenu) : null}
+        variants={item}
+      >
+        <Link to={"/events/splywy"}>
+          {/* <Link style={{ textDecoration: "none" }} to="/event/gory/polkolonie"> */}
+          <h2 style={{ color: !theme ? "#24242a" : "#fff" }}>Mazury</h2>
         </Link>
       </motion.li>
       <motion.li

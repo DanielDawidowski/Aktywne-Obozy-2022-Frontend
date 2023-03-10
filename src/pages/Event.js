@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { createClient } from "../functions/client";
 import { createClientEmail, createAdminEmail } from "../functions/email";
-
 import { getEvent } from "../functions/event";
 import { showIcon, showDate } from "../functions/utils";
 import ClientCreateForm from "../components/forms/ClientCreateForm";
@@ -35,6 +34,11 @@ const typesEvents = [
     icon: <KayakIcon />,
   },
   {
+    typeEvent: "polkolonie",
+    image: imageSplywy,
+    icon: <KayakIcon />,
+  },
+  {
     typeEvent: "morze",
     image: imageMorze,
     icon: <CrabIcon />,
@@ -59,8 +63,16 @@ const Event = () => {
   let eventType = eventPath.substring(eventPath.lastIndexOf("/")).slice(1);
 
   // destructure
-  const { _id, name, description, price, typeEvent, startDate, endDate } =
-    event;
+  const {
+    _id,
+    name,
+    description,
+    price,
+    priceNoDiscount,
+    typeEvent,
+    startDate,
+    endDate,
+  } = event;
 
   let { theme } = useSelector((state) => ({ ...state }));
 
@@ -74,6 +86,7 @@ const Event = () => {
       .then((res) => {
         setEvent(res.data);
         setLoading(false);
+        console.log(res.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -231,6 +244,23 @@ const Event = () => {
                     >
                       Cena: od {price} zł
                     </motion.h3>
+                    {priceNoDiscount && (
+                      <motion.h4
+                        initial={{ opacity: 0, x: 10 }}
+                        animate={{
+                          opacity: 1,
+                          x: 0,
+                          transition: {
+                            ease: "easeInOut",
+                            duration: 1.6,
+                            delay: 0.6,
+                          },
+                        }}
+                        exit={{ opacity: 0, x: 10 }}
+                      >
+                        Cena bez dofinansowania KRUS - {priceNoDiscount} zł
+                      </motion.h4>
+                    )}
                     <motion.div
                       className="event__icon"
                       initial={{ opacity: 0, x: 10 }}
@@ -255,8 +285,9 @@ const Event = () => {
           <div className="event__banner">{showEventImage(typesEvents)}</div>
         </motion.div>
       </section>
-      <EventAssured hotel />
+      <EventAssured typeEvent={typeEvent} />
       <EventInfo typeEvent={typeEvent} />
+
       <Footer />
     </Layout>
   );

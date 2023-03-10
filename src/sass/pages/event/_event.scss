@@ -61,7 +61,7 @@
           }
         }
       }
-    } 
+    }
     &-client {
       margin-top: $size3;
       width: 100%;
@@ -116,6 +116,20 @@
             font-size: 12px;
           }
         }
+        h4 {
+          position: absolute;
+          bottom: -50px;
+          right: -$size1;
+          background: $yellow;
+          padding: 8px $size2;
+          border: 1px solid $orange;
+          border-radius: $borderRadius;
+          font-size: 14px;
+          @media (max-width: $layout-breakpoint-small) {
+            padding: 4px $size3;
+            font-size: 12px;
+          }
+        }
         .event__icon {
           position: absolute;
           bottom: 30px;
@@ -135,7 +149,7 @@
           }
         }
       }
-    }  
+    }
   }
   &__banner {
     margin-top: $size4;
@@ -145,24 +159,10 @@
       object-fit: cover;
       width: 100%;
     }
-  
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.test{
+.test {
   overflow: hidden;
   height: 90vh;
 }

@@ -7,7 +7,7 @@ import { auth } from "./firebase";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Home from "./pages/Home";
-import Test from "./pages/test";
+// import Test from "./pages/test";
 import Events from "./pages/Events";
 import Event from "./pages/Event";
 import Contact from "./pages/Contact";
@@ -23,7 +23,6 @@ import EventCreate from "./pages/admin/event/EventCreate";
 import EventUpdate from "./pages/admin/event/EventUpdate";
 import EventsList from "./pages/admin/event/EventsList";
 import ClientsList from "./pages/admin/client/ClientsList";
-import SpecialEvents from "./pages/SpecialEvents";
 
 // import Loader from "./components/loader/loader";
 import { currentUser } from "./functions/auth";
@@ -89,18 +88,13 @@ const App = () => {
       <AnimatePresence exitBeforeEnter>
         <ScrollToTop />
         <Switch key={location.pathname} location={location}>
-          <Route exact path="/" component={Test} />
           <Route exact path="/" component={Home} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/register/complete" component={RegisterComplete} />
           <Route exact path="/forgot/password" component={ForgotPassword} />
-          <Route
-            exact
-            path="/event/:eventType/polkolonie"
-            component={SpecialEvents}
-          />
+
           <Route exact path="/events/:eventType" component={Events} />
           <Route exact path="/event/:eventType/:slug" component={Event} />
           <UserRoute exact path="/user/history" component={History} />

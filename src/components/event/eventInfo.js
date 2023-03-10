@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import Modal from "../../components/modal/modal";
 import EventGory from "./eventGory";
+import EventMazury from "./eventMazury";
+import EventMorze from "./eventMorze";
+import EventPolkolonie from "./eventPolkolonie";
 
 import BonImg from "../../assets/Images/bon.jpeg";
 // import EyeIcon from "../../assets/SVG/Eye/Eye";
@@ -17,6 +20,10 @@ const EventInfo = ({ typeEvent }) => {
       <section id="event-info">
         <div className="event-info container">
           {typeEvent === "gory" && <EventGory />}
+          {typeEvent === "splywy" && <EventMazury />}
+          {typeEvent === "morze" && <EventMorze />}
+          {typeEvent === "polkolonie" && <EventPolkolonie />}
+
           <div
             className="event-info__element"
             style={{
@@ -32,7 +39,6 @@ const EventInfo = ({ typeEvent }) => {
               <motion.img src={BonImg} alt={BonImg} />
             </div>
           </div>
-
           <div
             className="event-info__element"
             style={{

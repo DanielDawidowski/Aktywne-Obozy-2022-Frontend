@@ -65,7 +65,20 @@ const ClientCreateForm = ({ handleSubmit, handleChange, values }) => {
         />
       </div>
 
-      <div className="">
+      <div className="" style={{ display: "grid" }}>
+        <motion.label
+          htmlFor="age"
+          initial={{ opacity: 0, width: 100 }}
+          animate={{
+            opacity: 1,
+            width: "50%",
+            transition: { ease: "easeInOut", duration: 1.6, delay: 0.5 },
+          }}
+          exit={{ opacity: 0, width: 10 }}
+          style={{ marginLeft: "8px" }}
+        >
+          Data urodzenia
+        </motion.label>
         <motion.input
           type="date"
           ref={ref}

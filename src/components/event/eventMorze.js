@@ -1,18 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
+import LazurLogo from "../../assets/Images/lazur-logo.png";
+import LazurImg from "../../assets/Images/lazur.jpg";
+import LebaImg from "../../assets/Images/leba.jpg";
+import MalborkImg from "../../assets/Images/malbork.jpg";
+import BunkryImg from "../../assets/Images/bunkry.jpg";
+import ParkImg from "../../assets/Images/park.jpg";
+import UstkaImg from "../../assets/Images/ustka.jpg";
 import PinIcon from "../../assets/SVG/Icons-Info/Pin";
 import WebIcon from "../../assets/SVG/Icons-Info/Web";
-import SportIcon from "../../assets/SVG/Icons-Info/Sport";
 import SlideIcon from "../../assets/SVG/Icons-Info/Slide";
+import SportIcon from "../../assets/SVG/Icons-Info/Sport";
 import MountainIcon from "../../assets/SVG/Mountain/Mountain";
-import GalicowkaLogo from "../../assets/Images/galicowka-logo.png";
-import EnergylandiaImg from "../../assets/Images/energylandia.jpg";
-import GalicowkaImg from "../../assets/Images/galicowka-male-ciche.jpg";
 import BukovinaImg from "../../assets/Images/bukovina.jpg";
-import RusinowaImg from "../../assets/Images/rusinowa.png";
 
-function EventGory() {
+function EventMorze() {
   let { theme } = useSelector((state) => ({ ...state }));
   return (
     <>
@@ -25,25 +28,21 @@ function EventGory() {
         <div className="event-info__content">
           <h3>Miejsce zakwaterowania</h3>
           <span>
-            <img
-              className="event-info__logo"
-              src={GalicowkaLogo}
-              alt={GalicowkaLogo}
-            />
+            <img className="event-info__logo" src={LazurLogo} alt={LazurLogo} />
           </span>
           <span>
             <PinIcon />
-            <h4>Galicówka, Małe Ciche 67, 34-531 Małe Ciche</h4>
+            <h4>Ośrodek Wypoczynkowy LAZUR</h4>
           </span>
           <span>
             <WebIcon />
-            <a target="_blank" href="https://galicowka.com.pl">
-              www.galicowka.com.pl
+            <a target="_blank" href="http://www.lazurosrodki.pl/lazur">
+              www.lazurosrodki.pl
             </a>
           </span>
         </div>
         <div className="event-info__image">
-          <motion.img src={GalicowkaImg} alt={GalicowkaImg} />
+          <motion.img src={LazurImg} alt={LazurImg} />
         </div>
       </div>
       <div
@@ -55,11 +54,11 @@ function EventGory() {
         <div className="event-info__content">
           <span>
             <MountainIcon />
-            <h4>zajęcia plenerowe</h4>
+            <h4>zajęcia plenerowe - survival</h4>
           </span>
           <span>
             <SlideIcon />
-            <h4>baseny termalne</h4>
+            <h4>Aqua Park</h4>
           </span>
           <span>
             <SportIcon />
@@ -70,6 +69,27 @@ function EventGory() {
           <motion.img src={BukovinaImg} alt={BukovinaImg} />
         </div>
       </div>
+      <div
+        className="event-info__element"
+        style={{
+          border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
+        }}
+      >
+        <div className="event-info__image">
+          <motion.img src={BunkryImg} alt={BunkryImg} />
+        </div>
+        <div className="event-info__content">
+          <span>
+            <h4>Bunkry Bluchera</h4>
+          </span>
+          <span>
+            <h4>Ustka</h4>
+          </span>
+        </div>
+        <div className="event-info__image">
+          <motion.img src={UstkaImg} alt={UstkaImg} />
+        </div>
+      </div>
 
       <div
         className="event-info__element"
@@ -77,34 +97,19 @@ function EventGory() {
           border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
         }}
       >
+        <div className="event-info__image">
+          <motion.img src={LebaImg} alt={LebaImg} />
+        </div>
         <div className="event-info__content">
           <span>
-            <h3>Wycieczki krajoznawczo turystyczne</h3>
+            <h4>Łeba</h4>
           </span>
           <span>
-            <h4>Morskie Oko</h4>
-          </span>
-          <span>
-            <h4>Rusinowa Polana</h4>
-          </span>
-          <span>
-            <h4>Wielka Krokiew</h4>
-          </span>
-          <span>
-            <h4>Gubałówka</h4>
-          </span>
-          <span>
-            <h4>Zwiedzanie Zakopanego,</h4>
-          </span>
-          <span>
-            <h4>Zamek w Niedzicy i Czorsztynie</h4>
-          </span>
-          <span>
-            <h4>Kino</h4>
+            <h4>Zamek w Malborku</h4>
           </span>
         </div>
         <div className="event-info__image">
-          <motion.img src={RusinowaImg} alt={RusinowaImg} />
+          <motion.img src={MalborkImg} alt={MalborkImg} />
         </div>
       </div>
       <div
@@ -115,36 +120,15 @@ function EventGory() {
       >
         <div className="event-info__content">
           <span>
-            <h3>Całodniowa wycieczka do Enerylandii</h3>
+            <h4>Wycieczka do Słowińskiego Parku Narodowego </h4>
           </span>
         </div>
         <div className="event-info__image">
-          <motion.img src={EnergylandiaImg} alt={EnergylandiaImg} />
+          <motion.img src={ParkImg} alt={ParkImg} />
         </div>
       </div>
     </>
   );
 }
 
-export default EventGory;
-
-// <div
-//     className="event-info__element"
-//     style={{
-//       border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
-//     }}
-//   >
-//     <div className="event-info__content">
-//       <span>
-//         <SnowboardIcon />
-//         <h4>szkolenie narciarskie i snowboardowe</h4>
-//       </span>
-//       <span>
-//         <SkiIcon />
-//         <h4>SKIPASS</h4>
-//       </span>
-//     </div>
-//     <div className="event-info__image">
-//       <motion.img src={SkiImg} alt={SkiImg} />
-//     </div>
-//   </div>
+export default EventMorze;

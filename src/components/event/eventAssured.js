@@ -7,7 +7,7 @@ import TransportIcon from "../../assets/SVG/Icons-Assured/Transport";
 import InsuranceIcon from "../../assets/SVG/Icons-Assured/Insurance";
 import HotelIcon from "../../assets/SVG/Icons-Assured/Hotel";
 
-const EventAssured = ({ hotel = false }) => {
+const EventAssured = ({ typeEvent }) => {
   let { theme } = useSelector((state) => ({ ...state }));
 
   return (
@@ -44,17 +44,21 @@ const EventAssured = ({ hotel = false }) => {
             <h4>opiekę medyczną</h4>
           </span>
         </div>
-        {hotel && (
-          <div
-            className="event-assured__item"
-            style={{ background: theme ? "#24242a" : "#fff" }}
-          >
-            <span>
-              <HotelIcon />
-              <h4>nocleg i wyżywienie</h4>
-            </span>
-          </div>
-        )}
+
+        <div
+          className="event-assured__item"
+          style={{ background: theme ? "#24242a" : "#fff" }}
+        >
+          <span>
+            <HotelIcon bed={typeEvent === "polkolonie" ? false : true} />
+            <h4>
+              {typeEvent === "polkolonie"
+                ? "wyżywienie"
+                : "nocleg i wyżywienie"}
+            </h4>
+          </span>
+        </div>
+
         <div
           className="event-assured__item"
           style={{ background: theme ? "#24242a" : "#fff" }}

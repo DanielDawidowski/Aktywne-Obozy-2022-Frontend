@@ -12,6 +12,10 @@ const iconsArray = [
     src: <KayakIcon />,
   },
   {
+    typeEvent: "polkolonie",
+    src: <KayakIcon />,
+  },
+  {
     typeEvent: "morze",
     src: <CrabIcon />,
   },

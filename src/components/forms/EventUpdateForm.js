@@ -9,8 +9,16 @@ const ClientUpdateForm = ({
   typeEvent,
 }) => {
   // destructure
-  const { name, description, price, amount, status, startDate, endDate } =
-    values;
+  const {
+    name,
+    description,
+    price,
+    priceNoDiscount,
+    amount,
+    status,
+    startDate,
+    endDate,
+  } = values;
 
   return (
     <form onSubmit={handleSubmit}>
@@ -51,14 +59,14 @@ const ClientUpdateForm = ({
       </div>
 
       <div className="form-group">
-        <label>Ilość osób</label>
+        <label>Cena bez dofinansowania z KRUS </label>
         <input
           type="number"
-          name="amount"
+          name="priceNoDiscount"
           className="form-control"
-          value={amount}
+          value={priceNoDiscount}
           onChange={handleChange}
-          placeholder={"Ilość osób"}
+          placeholder={"Cena bez dofinansowania z KRUS"}
         />
       </div>
 
@@ -110,6 +118,7 @@ const ClientUpdateForm = ({
           <option value="gory">Góry</option>
           <option value="splywy">Spływy</option>
           <option value="morze">Morze</option>
+          <option value="polkolonie">Półkolonie</option>
         </select>
       </div>
 
