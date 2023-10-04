@@ -3,7 +3,8 @@ import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import Menu from "./Menu";
-import Logo from "../../assets/SVG/Logo/Logo.js";
+// import Logo from "../../assets/SVG/Logo/Logo.js";
+import Logo from "../../assets/Images/logo.png";
 
 const item = {
   hidden: {
@@ -46,12 +47,7 @@ const Navigation = ({ toggleMenu, setToggleMenu }) => {
             className="navigation container"
           >
             <motion.div variants={item} className="navigation-header">
-              <Logo
-                mainColor={!theme ? "#24242a" : "#fff"}
-                wheelColor={!theme ? "#24242a" : "#fff"}
-                style={{ margin: "10px" }}
-                animate
-              />
+              <motion.img className="header__logo" src={Logo} alt="logo" />
               <motion.div
                 variants={item}
                 className="hamburger-navigation"

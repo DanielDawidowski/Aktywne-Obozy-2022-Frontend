@@ -3,7 +3,8 @@ import { getEventsByCount } from "../../functions/event";
 import { motion } from "framer-motion";
 import Tent from "../../assets/SVG/Tent/Tent";
 import Card from "../card/card";
-import Logo from "../../assets/SVG/Logo/Logo";
+// import Logo from "../../assets/SVG/Logo/Logo";
+import Logo from "../../assets/Images/logo.png";
 
 const Footer = () => {
   const [width, setWidth] = useState(0);
@@ -22,7 +23,7 @@ const Footer = () => {
 
   const loadAllEvents = () => {
     setLoading(true);
-    getEventsByCount(3)
+    getEventsByCount(4)
       .then((res) => {
         setEvents(res.data);
         setLoading(false);
@@ -32,6 +33,18 @@ const Footer = () => {
         console.log(err);
       });
   };
+
+  const mappedEvents = events
+    .sort((a, b) => {
+      if (a.status !== "Aktualne" && b.status === "Aktualne") {
+        return 1; // 'a' comes before 'b'
+      } else if (a.status === "Aktualne" && b.status !== "Aktualne") {
+        return -1; // 'b' comes before 'a'
+      } else {
+        return 0; // no change in order
+      }
+    })
+    .slice(0, 3);
 
   return (
     <motion.footer
@@ -80,35 +93,24 @@ const Footer = () => {
               dragConstraints={{ bottom: 0, top: -width }}
               className="carousel__inner small"
             >
-              {events &&
-                events
-                  .sort((a, b) =>
-                    a.status !== b.status ? (a.status < b.status ? -1 : 1) : 0
-                  )
-                  .map((e, i) => {
-                    return <Card event={e} key={i} />;
-                  })}
+              {mappedEvents
+                .sort((a, b) => Number(a.startDate) - Number(b.startDate))
+                .map((e, i) => {
+                  return <Card event={e} key={i} />;
+                })}
             </motion.div>
             <motion.div
               drag="x"
               dragConstraints={{ right: 0, left: -width }}
               className="carousel__inner big"
             >
-              {events &&
-                events
-                  .sort((a, b) =>
-                    a.status !== b.status ? (a.status < b.status ? -1 : 1) : 0
-                  )
-                  .map((e, i) => <Card event={e} key={i} />)}
+              {mappedEvents.map((e, i) => (
+                <Card event={e} key={i} />
+              ))}
             </motion.div>
           </motion.div>
           <motion.div className="footer__logo">
-            <Logo
-              mainColor={"#fff"}
-              wheelColor={"#fff"}
-              animate
-              style={{ margin: "10px" }}
-            />
+            <motion.img className="header__logo" src={Logo} alt="logo" />
           </motion.div>
         </div>
       </div>

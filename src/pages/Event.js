@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
@@ -76,23 +76,23 @@ const Event = () => {
 
   let { theme } = useSelector((state) => ({ ...state }));
 
-  useEffect(() => {
-    loadEvent();
-  }, []);
-
-  const loadEvent = () => {
+  const loadEvent = useCallback(() => {
     setLoading(true);
     getEvent(eventType)
       .then((res) => {
         setEvent(res.data);
         setLoading(false);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err);
+        console.error(err);
       });
-  };
+  }, [eventType]);
+
+  useEffect(() => {
+    loadEvent();
+  }, [loadEvent]);
 
   let clientName = values.name;
   let clientEmail = values.email;

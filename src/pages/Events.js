@@ -9,10 +9,11 @@ import Footer from "../components/footer/footer";
 import imageGoryLeft from "../assets/Images/holly-mandarich.png";
 import imageSplywyLeft from "../assets/Images/tim-foster.png";
 import imageMorzeLeft from "../assets/Images/hermansyah.png";
-import imageGoryRight from "../assets/Images/tatry.jpg";
+// import imageGoryRight from "../assets/Images/tatry.jpg";
 import imageSplywyRight from "../assets/Images/splywy.png";
 import imagePolkolonieRight from "../assets/Images/kolonie.jpg";
 import imageMorzeRight from "../assets/Images/morze.jpg";
+import imageGoryRight from "../assets/Images/ski.png";
 
 const typesEvents = [
   {
@@ -170,23 +171,38 @@ const Events = () => {
                             details={e}
                             expanded={expanded}
                             setExpanded={setExpanded}
-                          >
-                            {e.status === "Aktualne" ? (
-                              <Link
-                                style={{ textDecoration: "none" }}
-                                to={`/event/${typeEvent}/${e.slug}`}
-                              >
-                                <motion.div className="events_element">
-                                  <h3 style={{ color: "green" }}>Zapisz się</h3>
-                                </motion.div>
-                              </Link>
-                            ) : (
-                              <motion.div className="events_element">
-                                <h3 style={{ color: "red" }}>Zakończony</h3>
-                              </motion.div>
-                            )}
-                          </Accordion>
+                          ></Accordion>
                         </AnimatePresence>
+                        {e.status === "Aktualne" ? (
+                          <Link
+                            style={{ textDecoration: "none" }}
+                            to={`/event/${typeEvent}/${e.slug}`}
+                          >
+                            <motion.div
+                              className="events_element"
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                  ease: "easeInOut",
+                                  duration: 1.6,
+                                },
+                              }}
+                              exit={{
+                                opacity: 0,
+                                x: -40,
+                                transition: { duration: 0.6 },
+                              }}
+                            >
+                              <h3 style={{ color: "green" }}>Zobacz</h3>
+                            </motion.div>
+                          </Link>
+                        ) : (
+                          <motion.div className="events_element">
+                            <h3 style={{ color: "red" }}>Zakończony</h3>
+                          </motion.div>
+                        )}
                       </motion.div>
                     )
                   );

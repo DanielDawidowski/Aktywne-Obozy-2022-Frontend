@@ -24,7 +24,7 @@ const EventInfo = ({ typeEvent }) => {
           {typeEvent === "morze" && <EventMorze />}
           {typeEvent === "polkolonie" && <EventPolkolonie />}
 
-          <div
+          {/* <div
             className="event-info__element"
             style={{
               border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
@@ -38,8 +38,8 @@ const EventInfo = ({ typeEvent }) => {
             <div className="event-info__image">
               <motion.img src={BonImg} alt={BonImg} />
             </div>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             className="event-info__element"
             style={{
               border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
@@ -56,8 +56,8 @@ const EventInfo = ({ typeEvent }) => {
                 </h3>
               </span>
             </div>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             className="event-info__element"
             style={{
               border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
@@ -74,7 +74,7 @@ const EventInfo = ({ typeEvent }) => {
                 </h3>
               </span>
             </div>
-          </div>
+          </div> */}
           <div
             className="event-info__element"
             style={{

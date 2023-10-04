@@ -31,20 +31,34 @@ const Accordion = ({ details, expanded, setExpanded, children }) => {
               {name}
             </motion.h3>
           </motion.div>
-          {isOpen && status === "Aktualne" ? (
+          {status === "Aktualne" ? (
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{
                 opacity: 1,
+                x: 0,
                 transition: { ease: "easeInOut", duration: 1.6 },
               }}
               className="accordion__icon"
             >
               <CalendarIcon colorArrow="green" />
-              <div className="accordion__date">
+              <motion.div
+                className="accordion__date"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { ease: "easeInOut", duration: 1.6 },
+                }}
+                exit={{
+                  opacity: 0,
+                  x: -40,
+                  transition: { duration: 0.6 },
+                }}
+              >
                 <h4>Zaczynamy:</h4>
                 <h4>{showDate(startDate)}</h4>
-              </div>
+              </motion.div>
             </motion.div>
           ) : null}
         </div>

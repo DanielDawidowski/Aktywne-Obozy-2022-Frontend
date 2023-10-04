@@ -5,13 +5,7 @@ import { showIcon } from "../../functions/utils";
 
 const Card = ({ event }) => {
   // destructure
-  const {
-    name,
-    slug,
-    status,
-    // description,
-    typeEvent,
-  } = event;
+  const { name, slug, status, typeEvent } = event;
   // console.log(typeEvent);
 
   return (

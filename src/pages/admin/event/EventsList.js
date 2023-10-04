@@ -71,6 +71,7 @@ const EventsList = () => {
                 >
                   <h1 className="mt-3 mb-3">{event.name}</h1>
                   <h1 className="mb-3">{event.typeEvent}</h1>
+                  <h1 className="mb-3">{event.startDate}</h1>
 
                   <span onClick={() => handleRemove(event.slug)}>
                     <h6>remove</h6>

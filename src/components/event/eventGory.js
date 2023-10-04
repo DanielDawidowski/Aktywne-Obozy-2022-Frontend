@@ -5,6 +5,9 @@ import PinIcon from "../../assets/SVG/Icons-Info/Pin";
 import WebIcon from "../../assets/SVG/Icons-Info/Web";
 import SportIcon from "../../assets/SVG/Icons-Info/Sport";
 import SlideIcon from "../../assets/SVG/Icons-Info/Slide";
+import SkiIcon from "../../assets/SVG/Icons-Info/Ski";
+import SnowboardIcon from "../../assets/SVG/Icons-Info/Snowboard";
+import SkiImg from "../../assets/Images/ski.png";
 import MountainIcon from "../../assets/SVG/Mountain/Mountain";
 import GalicowkaLogo from "../../assets/Images/galicowka-logo.png";
 import EnergylandiaImg from "../../assets/Images/energylandia.jpg";
@@ -37,7 +40,7 @@ function EventGory() {
           </span>
           <span>
             <WebIcon />
-            <a target="_blank" href="https://galicowka.com.pl">
+            <a target="_blank" rel="noreferrer" href="https://galicowka.com.pl">
               www.galicowka.com.pl
             </a>
           </span>
@@ -68,6 +71,26 @@ function EventGory() {
         </div>
         <div className="event-info__image">
           <motion.img src={BukovinaImg} alt={BukovinaImg} />
+        </div>
+      </div>
+      <div
+        className="event-info__element"
+        style={{
+          border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
+        }}
+      >
+        <div className="event-info__content">
+          <span>
+            <SnowboardIcon />
+            <h4>szkolenie narciarskie i snowboardowe</h4>
+          </span>
+          <span>
+            <SkiIcon />
+            <h4>SKIPASS</h4>
+          </span>
+        </div>
+        <div className="event-info__image">
+          <motion.img src={SkiImg} alt={SkiImg} />
         </div>
       </div>
 
@@ -107,7 +130,8 @@ function EventGory() {
           <motion.img src={RusinowaImg} alt={RusinowaImg} />
         </div>
       </div>
-      <div
+
+      {/* <div
         className="event-info__element"
         style={{
           border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
@@ -121,30 +145,9 @@ function EventGory() {
         <div className="event-info__image">
           <motion.img src={EnergylandiaImg} alt={EnergylandiaImg} />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
 
 export default EventGory;
-
-// <div
-//     className="event-info__element"
-//     style={{
-//       border: !theme ? "2px solid #24242a" : "1px solid #4d908e",
-//     }}
-//   >
-//     <div className="event-info__content">
-//       <span>
-//         <SnowboardIcon />
-//         <h4>szkolenie narciarskie i snowboardowe</h4>
-//       </span>
-//       <span>
-//         <SkiIcon />
-//         <h4>SKIPASS</h4>
-//       </span>
-//     </div>
-//     <div className="event-info__image">
-//       <motion.img src={SkiImg} alt={SkiImg} />
-//     </div>
-//   </div>

@@ -2,7 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Logo from "../../assets/SVG/Logo/Logo";
+// import Logo from "../../assets/SVG/Logo/Logo";
+import Logo from "../../assets/Images/logo.png";
+
 import Menu from "./Menu";
 
 const Header = ({ toggleMenu, setToggleMenu }) => {
@@ -49,12 +51,7 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
             exit={{ opacity: 0, x: -100 }}
           >
             <Link to="/">
-              <Logo
-                mainColor={!theme ? "#24242a" : "#fff"}
-                wheelColor={!theme ? "#24242a" : "#fff"}
-                animate
-                style={{ margin: "10px" }}
-              />
+              <motion.img className="header__logo" src={Logo} alt="logo" />
             </Link>
           </motion.li>
           <motion.li className="header__list-item header-menu">
